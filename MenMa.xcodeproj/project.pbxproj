@@ -13,6 +13,14 @@
 		230AD02A1B2CC993003254E7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 230AD0291B2CC993003254E7 /* Images.xcassets */; };
 		230AD02D1B2CC993003254E7 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 230AD02B1B2CC993003254E7 /* LaunchScreen.xib */; };
 		230AD0391B2CC993003254E7 /* MenMaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 230AD0381B2CC993003254E7 /* MenMaTests.swift */; };
+		230AD04C1B2CCA4E003254E7 /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 230AD04B1B2CCA4E003254E7 /* InterfaceController.swift */; };
+		230AD04E1B2CCA4E003254E7 /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 230AD04D1B2CCA4E003254E7 /* NotificationController.swift */; };
+		230AD0501B2CCA4E003254E7 /* GlanceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 230AD04F1B2CCA4E003254E7 /* GlanceController.swift */; };
+		230AD0521B2CCA4E003254E7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 230AD0511B2CCA4E003254E7 /* Images.xcassets */; };
+		230AD0561B2CCA4E003254E7 /* MenMa WatchKit App.app in Resources */ = {isa = PBXBuildFile; fileRef = 230AD0551B2CCA4E003254E7 /* MenMa WatchKit App.app */; };
+		230AD05E1B2CCA4E003254E7 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 230AD05C1B2CCA4E003254E7 /* Interface.storyboard */; };
+		230AD0601B2CCA4E003254E7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 230AD05F1B2CCA4E003254E7 /* Images.xcassets */; };
+		230AD0631B2CCA4E003254E7 /* MenMa WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 230AD0461B2CCA4E003254E7 /* MenMa WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -23,7 +31,35 @@
 			remoteGlobalIDString = 230AD01C1B2CC993003254E7;
 			remoteInfo = MenMa;
 		};
+		230AD0571B2CCA4E003254E7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 230AD0151B2CC993003254E7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 230AD0541B2CCA4E003254E7;
+			remoteInfo = "MenMa WatchKit App";
+		};
+		230AD0611B2CCA4E003254E7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 230AD0151B2CC993003254E7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 230AD0451B2CCA4E003254E7;
+			remoteInfo = "MenMa WatchKit Extension";
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		230AD06A1B2CCA4E003254E7 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				230AD0631B2CCA4E003254E7 /* MenMa WatchKit Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		230AD01D1B2CC993003254E7 /* MenMa.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MenMa.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -36,6 +72,17 @@
 		230AD0321B2CC993003254E7 /* MenMaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MenMaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		230AD0371B2CC993003254E7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		230AD0381B2CC993003254E7 /* MenMaTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenMaTests.swift; sourceTree = "<group>"; };
+		230AD0461B2CCA4E003254E7 /* MenMa WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "MenMa WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		230AD0491B2CCA4E003254E7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		230AD04A1B2CCA4E003254E7 /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
+		230AD04B1B2CCA4E003254E7 /* InterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceController.swift; sourceTree = "<group>"; };
+		230AD04D1B2CCA4E003254E7 /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
+		230AD04F1B2CCA4E003254E7 /* GlanceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlanceController.swift; sourceTree = "<group>"; };
+		230AD0511B2CCA4E003254E7 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		230AD0551B2CCA4E003254E7 /* MenMa WatchKit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MenMa WatchKit App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		230AD05B1B2CCA4E003254E7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		230AD05D1B2CCA4E003254E7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
+		230AD05F1B2CCA4E003254E7 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +100,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		230AD0431B2CCA4E003254E7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -61,6 +115,8 @@
 			children = (
 				230AD01F1B2CC993003254E7 /* MenMa */,
 				230AD0351B2CC993003254E7 /* MenMaTests */,
+				230AD0471B2CCA4E003254E7 /* MenMa WatchKit Extension */,
+				230AD0591B2CCA4E003254E7 /* MenMa WatchKit App */,
 				230AD01E1B2CC993003254E7 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -70,6 +126,8 @@
 			children = (
 				230AD01D1B2CC993003254E7 /* MenMa.app */,
 				230AD0321B2CC993003254E7 /* MenMaTests.xctest */,
+				230AD0461B2CCA4E003254E7 /* MenMa WatchKit Extension.appex */,
+				230AD0551B2CCA4E003254E7 /* MenMa WatchKit App.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -112,6 +170,45 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		230AD0471B2CCA4E003254E7 /* MenMa WatchKit Extension */ = {
+			isa = PBXGroup;
+			children = (
+				230AD04B1B2CCA4E003254E7 /* InterfaceController.swift */,
+				230AD04D1B2CCA4E003254E7 /* NotificationController.swift */,
+				230AD04F1B2CCA4E003254E7 /* GlanceController.swift */,
+				230AD0511B2CCA4E003254E7 /* Images.xcassets */,
+				230AD0481B2CCA4E003254E7 /* Supporting Files */,
+			);
+			path = "MenMa WatchKit Extension";
+			sourceTree = "<group>";
+		};
+		230AD0481B2CCA4E003254E7 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				230AD0491B2CCA4E003254E7 /* Info.plist */,
+				230AD04A1B2CCA4E003254E7 /* PushNotificationPayload.apns */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		230AD0591B2CCA4E003254E7 /* MenMa WatchKit App */ = {
+			isa = PBXGroup;
+			children = (
+				230AD05C1B2CCA4E003254E7 /* Interface.storyboard */,
+				230AD05F1B2CCA4E003254E7 /* Images.xcassets */,
+				230AD05A1B2CCA4E003254E7 /* Supporting Files */,
+			);
+			path = "MenMa WatchKit App";
+			sourceTree = "<group>";
+		};
+		230AD05A1B2CCA4E003254E7 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				230AD05B1B2CCA4E003254E7 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -122,10 +219,12 @@
 				230AD0191B2CC993003254E7 /* Sources */,
 				230AD01A1B2CC993003254E7 /* Frameworks */,
 				230AD01B1B2CC993003254E7 /* Resources */,
+				230AD06A1B2CCA4E003254E7 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				230AD0621B2CCA4E003254E7 /* PBXTargetDependency */,
 			);
 			name = MenMa;
 			productName = MenMa;
@@ -150,6 +249,39 @@
 			productReference = 230AD0321B2CC993003254E7 /* MenMaTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		230AD0451B2CCA4E003254E7 /* MenMa WatchKit Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 230AD0671B2CCA4E003254E7 /* Build configuration list for PBXNativeTarget "MenMa WatchKit Extension" */;
+			buildPhases = (
+				230AD0421B2CCA4E003254E7 /* Sources */,
+				230AD0431B2CCA4E003254E7 /* Frameworks */,
+				230AD0441B2CCA4E003254E7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				230AD0581B2CCA4E003254E7 /* PBXTargetDependency */,
+			);
+			name = "MenMa WatchKit Extension";
+			productName = "MenMa WatchKit Extension";
+			productReference = 230AD0461B2CCA4E003254E7 /* MenMa WatchKit Extension.appex */;
+			productType = "com.apple.product-type.watchkit-extension";
+		};
+		230AD0541B2CCA4E003254E7 /* MenMa WatchKit App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 230AD0641B2CCA4E003254E7 /* Build configuration list for PBXNativeTarget "MenMa WatchKit App" */;
+			buildPhases = (
+				230AD0531B2CCA4E003254E7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "MenMa WatchKit App";
+			productName = "MenMa WatchKit App";
+			productReference = 230AD0551B2CCA4E003254E7 /* MenMa WatchKit App.app */;
+			productType = "com.apple.product-type.application.watchapp";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -165,6 +297,12 @@
 					230AD0311B2CC993003254E7 = {
 						CreatedOnToolsVersion = 6.3.2;
 						TestTargetID = 230AD01C1B2CC993003254E7;
+					};
+					230AD0451B2CCA4E003254E7 = {
+						CreatedOnToolsVersion = 6.3.2;
+					};
+					230AD0541B2CCA4E003254E7 = {
+						CreatedOnToolsVersion = 6.3.2;
 					};
 				};
 			};
@@ -183,6 +321,8 @@
 			targets = (
 				230AD01C1B2CC993003254E7 /* MenMa */,
 				230AD0311B2CC993003254E7 /* MenMaTests */,
+				230AD0451B2CCA4E003254E7 /* MenMa WatchKit Extension */,
+				230AD0541B2CCA4E003254E7 /* MenMa WatchKit App */,
 			);
 		};
 /* End PBXProject section */
@@ -202,6 +342,24 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		230AD0441B2CCA4E003254E7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				230AD0521B2CCA4E003254E7 /* Images.xcassets in Resources */,
+				230AD0561B2CCA4E003254E7 /* MenMa WatchKit App.app in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		230AD0531B2CCA4E003254E7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				230AD05E1B2CCA4E003254E7 /* Interface.storyboard in Resources */,
+				230AD0601B2CCA4E003254E7 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -225,6 +383,16 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		230AD0421B2CCA4E003254E7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				230AD04E1B2CCA4E003254E7 /* NotificationController.swift in Sources */,
+				230AD04C1B2CCA4E003254E7 /* InterfaceController.swift in Sources */,
+				230AD0501B2CCA4E003254E7 /* GlanceController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -232,6 +400,16 @@
 			isa = PBXTargetDependency;
 			target = 230AD01C1B2CC993003254E7 /* MenMa */;
 			targetProxy = 230AD0331B2CC993003254E7 /* PBXContainerItemProxy */;
+		};
+		230AD0581B2CCA4E003254E7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 230AD0541B2CCA4E003254E7 /* MenMa WatchKit App */;
+			targetProxy = 230AD0571B2CCA4E003254E7 /* PBXContainerItemProxy */;
+		};
+		230AD0621B2CCA4E003254E7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 230AD0451B2CCA4E003254E7 /* MenMa WatchKit Extension */;
+			targetProxy = 230AD0611B2CCA4E003254E7 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -250,6 +428,14 @@
 				230AD02C1B2CC993003254E7 /* Base */,
 			);
 			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+		230AD05C1B2CCA4E003254E7 /* Interface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				230AD05D1B2CCA4E003254E7 /* Base */,
+			);
+			name = Interface.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -392,6 +578,62 @@
 			};
 			name = Release;
 		};
+		230AD0651B2CCA4E003254E7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				IBSC_MODULE = MenMa_WatchKit_Extension;
+				INFOPLIST_FILE = "MenMa WatchKit App/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				"TARGETED_DEVICE_FAMILY[sdk=iphonesimulator*]" = "1,4";
+			};
+			name = Debug;
+		};
+		230AD0661B2CCA4E003254E7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				IBSC_MODULE = MenMa_WatchKit_Extension;
+				INFOPLIST_FILE = "MenMa WatchKit App/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				"TARGETED_DEVICE_FAMILY[sdk=iphonesimulator*]" = "1,4";
+			};
+			name = Release;
+		};
+		230AD0681B2CCA4E003254E7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "MenMa WatchKit Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		230AD0691B2CCA4E003254E7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = "MenMa WatchKit Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -417,6 +659,22 @@
 			buildConfigurations = (
 				230AD0401B2CC993003254E7 /* Debug */,
 				230AD0411B2CC993003254E7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		230AD0641B2CCA4E003254E7 /* Build configuration list for PBXNativeTarget "MenMa WatchKit App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				230AD0651B2CCA4E003254E7 /* Debug */,
+				230AD0661B2CCA4E003254E7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		230AD0671B2CCA4E003254E7 /* Build configuration list for PBXNativeTarget "MenMa WatchKit Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				230AD0681B2CCA4E003254E7 /* Debug */,
+				230AD0691B2CCA4E003254E7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};
