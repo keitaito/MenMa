@@ -21,8 +21,10 @@
 		230AD05E1B2CCA4E003254E7 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 230AD05C1B2CCA4E003254E7 /* Interface.storyboard */; };
 		230AD0601B2CCA4E003254E7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 230AD05F1B2CCA4E003254E7 /* Images.xcassets */; };
 		230AD0631B2CCA4E003254E7 /* MenMa WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 230AD0461B2CCA4E003254E7 /* MenMa WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		5D29E935E92E80745BC4F09B /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B72235333B833050E8D4BF3E /* libPods.a */; };
 		D29463621B2CCD0A004B5FBA /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D29463611B2CCD0A004B5FBA /* MapKit.framework */; };
 		D29463631B2CCD16004B5FBA /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D29463611B2CCD0A004B5FBA /* MapKit.framework */; };
+		D2DF268D1B2CFD6C001757E3 /* RamenRowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2DF268C1B2CFD6C001757E3 /* RamenRowController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -85,7 +87,12 @@
 		230AD05B1B2CCA4E003254E7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		230AD05D1B2CCA4E003254E7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
 		230AD05F1B2CCA4E003254E7 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		3F2B02D772AF6EC147534841 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		B3714C9C24AB04A5D8F82BB3 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		B72235333B833050E8D4BF3E /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		D29463611B2CCD0A004B5FBA /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		D29463711B2CDE4D004B5FBA /* Menma-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Menma-Bridging-Header.h"; sourceTree = "<group>"; };
+		D2DF268C1B2CFD6C001757E3 /* RamenRowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RamenRowController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +101,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D29463631B2CCD16004B5FBA /* MapKit.framework in Frameworks */,
+				5D29E935E92E80745BC4F09B /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -115,6 +123,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		08219D17BAC016027CBCC38E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B3714C9C24AB04A5D8F82BB3 /* Pods.debug.xcconfig */,
+				3F2B02D772AF6EC147534841 /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		230AD0141B2CC993003254E7 = {
 			isa = PBXGroup;
 			children = (
@@ -124,6 +141,8 @@
 				230AD0471B2CCA4E003254E7 /* MenMa WatchKit Extension */,
 				230AD0591B2CCA4E003254E7 /* MenMa WatchKit App */,
 				230AD01E1B2CC993003254E7 /* Products */,
+				08219D17BAC016027CBCC38E /* Pods */,
+				6EF659E3FDA21E4EF7D85323 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -143,6 +162,7 @@
 			children = (
 				230AD0221B2CC993003254E7 /* AppDelegate.swift */,
 				230AD0241B2CC993003254E7 /* ViewController.swift */,
+				D29463711B2CDE4D004B5FBA /* Menma-Bridging-Header.h */,
 				230AD0261B2CC993003254E7 /* Main.storyboard */,
 				230AD0291B2CC993003254E7 /* Images.xcassets */,
 				230AD02B1B2CC993003254E7 /* LaunchScreen.xib */,
@@ -182,6 +202,7 @@
 				230AD04B1B2CCA4E003254E7 /* InterfaceController.swift */,
 				230AD04D1B2CCA4E003254E7 /* NotificationController.swift */,
 				230AD04F1B2CCA4E003254E7 /* GlanceController.swift */,
+				D2DF268C1B2CFD6C001757E3 /* RamenRowController.swift */,
 				230AD0511B2CCA4E003254E7 /* Images.xcassets */,
 				230AD0481B2CCA4E003254E7 /* Supporting Files */,
 			);
@@ -215,6 +236,14 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		6EF659E3FDA21E4EF7D85323 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B72235333B833050E8D4BF3E /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -222,10 +251,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 230AD03C1B2CC993003254E7 /* Build configuration list for PBXNativeTarget "MenMa" */;
 			buildPhases = (
+				D5B0E7767A735AE5CBD89C9C /* Check Pods Manifest.lock */,
 				230AD0191B2CC993003254E7 /* Sources */,
 				230AD01A1B2CC993003254E7 /* Frameworks */,
 				230AD01B1B2CC993003254E7 /* Resources */,
 				230AD06A1B2CCA4E003254E7 /* Embed App Extensions */,
+				CF320CC553A1E4DAA505F9CF /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -381,6 +412,39 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		CF320CC553A1E4DAA505F9CF /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D5B0E7767A735AE5CBD89C9C /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		230AD0191B2CC993003254E7 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -405,6 +469,7 @@
 			files = (
 				230AD04E1B2CCA4E003254E7 /* NotificationController.swift in Sources */,
 				230AD04C1B2CCA4E003254E7 /* InterfaceController.swift in Sources */,
+				D2DF268D1B2CFD6C001757E3 /* RamenRowController.swift in Sources */,
 				230AD0501B2CCA4E003254E7 /* GlanceController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -542,21 +607,28 @@
 		};
 		230AD03D1B2CC993003254E7 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B3714C9C24AB04A5D8F82BB3 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = MenMa/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "MenMa/MenMa-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
 		230AD03E1B2CC993003254E7 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3F2B02D772AF6EC147534841 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = MenMa/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "MenMa/MenMa-Bridging-Header.h";
 			};
 			name = Release;
 		};

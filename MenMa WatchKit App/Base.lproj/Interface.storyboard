@@ -11,14 +11,29 @@
                 <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="MenMa_WatchKit_App" customModuleProvider="target">
                     <items>
                         <label alignment="center" text="🍜" id="Qws-M1-ciJ"/>
-                        <map alignment="left" id="FYY-0k-kIE"/>
+                        <map height="125" alignment="left" id="FYY-0k-kIE"/>
+                        <table alignment="left" id="Tdw-95-wGF">
+                            <items>
+                                <tableRow identifier="ramenRowController" id="Ec9-W0-3M8" customClass="RamenRowController" customModule="MenMa_WatchKit_Extension">
+                                    <group key="rootItem" width="1" alignment="left" id="rvf-PW-y4K">
+                                        <items>
+                                            <label alignment="left" verticalAlignment="center" text="Label" id="MDh-nP-um0"/>
+                                        </items>
+                                    </group>
+                                    <connections>
+                                        <outlet property="ramenLabel" destination="MDh-nP-um0" id="ZIE-hO-Oba"/>
+                                    </connections>
+                                </tableRow>
+                            </items>
+                        </table>
                     </items>
                     <connections>
                         <outlet property="ramenMap" destination="FYY-0k-kIE" id="pnW-Lt-DA0"/>
+                        <outlet property="ramenTableView" destination="Tdw-95-wGF" id="BIQ-dX-405"/>
                     </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="235" y="347"/>
+            <point key="canvasLocation" x="235" y="348"/>
         </scene>
         <!--Glance Interface Controller-->
         <scene sceneID="BOz-TT-tkC">

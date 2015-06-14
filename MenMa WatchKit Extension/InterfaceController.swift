@@ -14,6 +14,8 @@ import MapKit
 class InterfaceController: WKInterfaceController {
 
     @IBOutlet var ramenMap: WKInterfaceMap!
+    @IBOutlet var ramenTableView: WKInterfaceTable!
+    var tempArray: NSArray = ["tonkotsu","shoyu","miso"]
     
     override func awakeWithContext(context: AnyObject?) {
         super.awakeWithContext(context)
@@ -22,10 +24,22 @@ class InterfaceController: WKInterfaceController {
         let regionSpan: MKCoordinateSpan = MKCoordinateSpanMake(1, 1)
         ramenMap.addAnnotation(mapLocation, withPinColor: WKInterfaceMapPinColor.Purple)
         
-        
         ramenMap.setRegion(MKCoordinateRegionMake(mapLocation, regionSpan))
+        
+        self.configureRamenTableView(tempArray)
     }
 
+    func configureRamenTableView (dataObjects: NSArray) {
+        ramenTableView.setNumberOfRows(dataObjects.count, withRowType: "ramenRowController")
+        
+        for var i = 0; i < ramenTableView.numberOfRows; ++i {
+            let ramenRow: RamenRowController = self.ramenTableView.rowControllerAtIndex(i) as! RamenRowController
+            let dataObject: NSString = dataObjects.objectAtIndex(i) as! NSString
+            
+            ramenRow.ramenLabel.setText(dataObject as? String)
+        }
+    }
+    
     override func willActivate() {
         // This method is called when watch view controller is about to be visible to user
         super.willActivate()
