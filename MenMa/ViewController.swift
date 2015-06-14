@@ -11,9 +11,12 @@ import UIKit
 class ViewController: UIViewController {
 
     var url: NSURL?
+    var cachedRamenNames: [String] = []
+    let sharedDefaults: NSUserDefaults = NSUserDefaults(suiteName: "com.keitaito.MenMa")!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         url = NSURL(string: "https://api.foursquare.com/v2/venues/search?ll=37.7992426,-122.4007343&query=ramen&oauth_token=REZLGOWAE45WNZ21NHBSNUBNOJXC32AQYNFJOQEB0SLDPTQP&v=20150613")
         let request = NSURLRequest(URL: url!)
         
@@ -27,13 +30,14 @@ class ViewController: UIViewController {
                 var name = venue["name"]
                 if let n = name as? NSString {
                     println(n)
+                    self.cachedRamenNames.append(n as String)
                 }
-
-//                var categories = venue["categories"] as! NSArray
-//                var category = categories[0] as! NSDictionary
-//                var name = category["name"] as! NSString
-//                println(name)
             }
+            
+            self.sharedDefaults.setObject(self.cachedRamenNames, forKey: "ramenPlaceNames")
+            self.sharedDefaults.synchronize()
+            
+            println(self.cachedRamenNames)
         }
     }
 

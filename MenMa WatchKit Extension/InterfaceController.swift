@@ -15,7 +15,9 @@ class InterfaceController: WKInterfaceController {
 
     @IBOutlet var ramenMap: WKInterfaceMap!
     @IBOutlet var ramenTableView: WKInterfaceTable!
-    var tempArray: NSArray = ["tonkotsu","shoyu","miso"]
+    let sharedDefaults: NSUserDefaults = NSUserDefaults(suiteName: "com.keitaito.MenMa")!
+    //var tempArray: NSArray = ["tonkotsu🍜","shoyu🍜","miso🍜"]
+    var cachedRamenPlaceNames: [String] = []
     
     override func awakeWithContext(context: AnyObject?) {
         super.awakeWithContext(context)
@@ -26,13 +28,14 @@ class InterfaceController: WKInterfaceController {
         
         ramenMap.setRegion(MKCoordinateRegionMake(mapLocation, regionSpan))
         
-        self.configureRamenTableView(tempArray)
+        cachedRamenPlaceNames = sharedDefaults.objectForKey("ramenPlaceNames") as! [String]
+        self.configureRamenTableView(cachedRamenPlaceNames)
     }
 
     func configureRamenTableView (dataObjects: NSArray) {
         ramenTableView.setNumberOfRows(dataObjects.count, withRowType: "ramenRowController")
         
-        for var i = 0; i < ramenTableView.numberOfRows; ++i {
+        for var i = 0; i < cachedRamenPlaceNames.count; ++i {
             let ramenRow: RamenRowController = self.ramenTableView.rowControllerAtIndex(i) as! RamenRowController
             let dataObject: NSString = dataObjects.objectAtIndex(i) as! NSString
             
