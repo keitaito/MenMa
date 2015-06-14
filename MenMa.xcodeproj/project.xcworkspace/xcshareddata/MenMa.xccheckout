@@ -5,21 +5,13 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-<<<<<<< HEAD
-	<string>B636B719-DFB5-4023-B847-AB9EBADDE3DF</string>
-=======
 	<string>B26E26AF-D7C3-4C97-AF62-ED0E2DF6FB4A</string>
->>>>>>> a8f7255ffb3a81b116152f038b4d93c1f5ba5a98
 	<key>IDESourceControlProjectName</key>
 	<string>MenMa</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>2833499D581FC93A58D2FB653D27AB6E15A90FD9</key>
-<<<<<<< HEAD
-		<string>github.com:lynneokada/MenMa.git</string>
-=======
 		<string>https://github.com/keitaito/MenMa.git</string>
->>>>>>> a8f7255ffb3a81b116152f038b4d93c1f5ba5a98
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>MenMa.xcodeproj</string>
@@ -29,11 +21,7 @@
 		<string>../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-<<<<<<< HEAD
-	<string>github.com:lynneokada/MenMa.git</string>
-=======
 	<string>https://github.com/keitaito/MenMa.git</string>
->>>>>>> a8f7255ffb3a81b116152f038b4d93c1f5ba5a98
 	<key>IDESourceControlProjectVersion</key>
 	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>

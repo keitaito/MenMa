@@ -12,7 +12,7 @@ class ViewController: UIViewController {
 
     var url: NSURL?
     var cachedRamenNames: [String] = []
-    let sharedDefaults: NSUserDefaults = NSUserDefaults(suiteName: "com.keitaito.MenMa")!
+    let sharedDefaults: NSUserDefaults = NSUserDefaults(suiteName: "group.com.keitaito.MenMa")!
     
     override func viewDidLoad() {
         super.viewDidLoad()

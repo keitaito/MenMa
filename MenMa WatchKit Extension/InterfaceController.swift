@@ -15,7 +15,7 @@ class InterfaceController: WKInterfaceController {
 
     @IBOutlet var ramenMap: WKInterfaceMap!
     @IBOutlet var ramenTableView: WKInterfaceTable!
-    let sharedDefaults: NSUserDefaults = NSUserDefaults(suiteName: "com.keitaito.MenMa")!
+    let sharedDefaults: NSUserDefaults = NSUserDefaults(suiteName: "group.com.keitaito.MenMa")!
     //var tempArray: NSArray = ["tonkotsu🍜","shoyu🍜","miso🍜"]
     var cachedRamenPlaceNames: [String] = []
     
@@ -29,6 +29,7 @@ class InterfaceController: WKInterfaceController {
         ramenMap.setRegion(MKCoordinateRegionMake(mapLocation, regionSpan))
         
         cachedRamenPlaceNames = sharedDefaults.objectForKey("ramenPlaceNames") as! [String]
+
         self.configureRamenTableView(cachedRamenPlaceNames)
     }
 
