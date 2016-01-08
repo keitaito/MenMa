@@ -17,7 +17,7 @@ class InterfaceController: WKInterfaceController {
     @IBOutlet var ramenTableView: WKInterfaceTable!
     let sharedDefaults: NSUserDefaults = NSUserDefaults(suiteName: "group.com.keitaito.MenMa")!
     //var tempArray: NSArray = ["tonkotsu🍜","shoyu🍜","miso🍜"]
-    var cachedRamenPlaceNames: [String] = []
+    var cachedRamenPlaceNames: [String]? = []
     
     override func awakeWithContext(context: AnyObject?) {
         super.awakeWithContext(context)
@@ -28,19 +28,22 @@ class InterfaceController: WKInterfaceController {
         
         ramenMap.setRegion(MKCoordinateRegionMake(mapLocation, regionSpan))
         
-        cachedRamenPlaceNames = sharedDefaults.objectForKey("ramenPlaceNames") as! [String]
-
-        self.configureRamenTableView(cachedRamenPlaceNames)
+        cachedRamenPlaceNames = sharedDefaults.objectForKey("ramenPlaceNames") as? [String]
+        if let cachedRamenPlaceNames = cachedRamenPlaceNames {
+            self.configureRamenTableView(cachedRamenPlaceNames)
+        } else {
+            self.configureRamenTableView(NSArray())
+        }
     }
 
     func configureRamenTableView (dataObjects: NSArray) {
         ramenTableView.setNumberOfRows(dataObjects.count, withRowType: "ramenRowController")
-        
+        guard let cachedRamenPlaceNames = cachedRamenPlaceNames else {return}
         for var i = 0; i < cachedRamenPlaceNames.count; ++i {
             let ramenRow: RamenRowController = self.ramenTableView.rowControllerAtIndex(i) as! RamenRowController
             let dataObject: NSString = dataObjects.objectAtIndex(i) as! NSString
             
-            ramenRow.ramenLabel.setText(dataObject as? String)
+            ramenRow.ramenLabel.setText(dataObject as String)
         }
     }
     
