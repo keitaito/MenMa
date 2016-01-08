@@ -29,8 +29,8 @@ class InterfaceController: WKInterfaceController {
         ramenMap.setRegion(MKCoordinateRegionMake(mapLocation, regionSpan))
         
         cachedRamenPlaceNames = sharedDefaults.objectForKey("ramenPlaceNames") as? [String]
-        if let cachedRamenPlaceName = cachedRamenPlaceNames {
-            self.configureRamenTableView(cachedRamenPlaceName)
+        if let cachedRamenPlaceNames = cachedRamenPlaceNames {
+            self.configureRamenTableView(cachedRamenPlaceNames)
         } else {
             self.configureRamenTableView(NSArray())
         }
@@ -39,12 +39,12 @@ class InterfaceController: WKInterfaceController {
     func configureRamenTableView (dataObjects: NSArray) {
         guard let cachedRamenPlaceNames = cachedRamenPlaceNames else {return}
         ramenTableView.setNumberOfRows(dataObjects.count, withRowType: "ramenRowController")
-        
+        guard let cachedRamenPlaceNames = cachedRamenPlaceNames else {return}
         for var i = 0; i < cachedRamenPlaceNames.count; ++i {
             let ramenRow: RamenRowController = self.ramenTableView.rowControllerAtIndex(i) as! RamenRowController
             let dataObject: NSString = dataObjects.objectAtIndex(i) as! NSString
             
-            ramenRow.ramenLabel.setText(dataObject as? String)
+            ramenRow.ramenLabel.setText(dataObject as String)
         }
     }
     

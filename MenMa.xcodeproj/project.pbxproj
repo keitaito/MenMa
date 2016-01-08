@@ -17,11 +17,11 @@
 		230AD04E1B2CCA4E003254E7 /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 230AD04D1B2CCA4E003254E7 /* NotificationController.swift */; };
 		230AD0501B2CCA4E003254E7 /* GlanceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 230AD04F1B2CCA4E003254E7 /* GlanceController.swift */; };
 		230AD0521B2CCA4E003254E7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 230AD0511B2CCA4E003254E7 /* Images.xcassets */; };
-		230AD0561B2CCA4E003254E7 /* MenMa WatchKit App.app in Resources */ = {isa = PBXBuildFile; fileRef = 230AD0551B2CCA4E003254E7 /* MenMa WatchKit App.app */; };
 		230AD05E1B2CCA4E003254E7 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 230AD05C1B2CCA4E003254E7 /* Interface.storyboard */; };
 		230AD0601B2CCA4E003254E7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 230AD05F1B2CCA4E003254E7 /* Images.xcassets */; };
-		230AD0631B2CCA4E003254E7 /* MenMa WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 230AD0461B2CCA4E003254E7 /* MenMa WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		5D29E935E92E80745BC4F09B /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B72235333B833050E8D4BF3E /* libPods.a */; };
+		87FA646E1C3F62E70028F7FD /* MenMa WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 230AD0461B2CCA4E003254E7 /* MenMa WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		87FA64711C3F62E70028F7FD /* MenMa WatchKit App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 230AD0551B2CCA4E003254E7 /* MenMa WatchKit App.app */; };
 		D29463621B2CCD0A004B5FBA /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D29463611B2CCD0A004B5FBA /* MapKit.framework */; };
 		D29463631B2CCD16004B5FBA /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D29463611B2CCD0A004B5FBA /* MapKit.framework */; };
 		D2DF268D1B2CFD6C001757E3 /* RamenRowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2DF268C1B2CFD6C001757E3 /* RamenRowController.swift */; };
@@ -35,32 +35,43 @@
 			remoteGlobalIDString = 230AD01C1B2CC993003254E7;
 			remoteInfo = MenMa;
 		};
-		230AD0571B2CCA4E003254E7 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 230AD0151B2CC993003254E7 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 230AD0541B2CCA4E003254E7;
-			remoteInfo = "MenMa WatchKit App";
-		};
-		230AD0611B2CCA4E003254E7 /* PBXContainerItemProxy */ = {
+		87FA646C1C3F62E70028F7FD /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 230AD0151B2CC993003254E7 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 230AD0451B2CCA4E003254E7;
 			remoteInfo = "MenMa WatchKit Extension";
 		};
+		87FA646F1C3F62E70028F7FD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 230AD0151B2CC993003254E7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 230AD0541B2CCA4E003254E7;
+			remoteInfo = "MenMa WatchKit App";
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		230AD06A1B2CCA4E003254E7 /* Embed App Extensions */ = {
+		87FA64721C3F62E70028F7FD /* Embed App Extensions */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				230AD0631B2CCA4E003254E7 /* MenMa WatchKit Extension.appex in Embed App Extensions */,
+				87FA646E1C3F62E70028F7FD /* MenMa WatchKit Extension.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		87FA64731C3F62E70028F7FD /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				87FA64711C3F62E70028F7FD /* MenMa WatchKit App.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
@@ -259,14 +270,14 @@
 				230AD0191B2CC993003254E7 /* Sources */,
 				230AD01A1B2CC993003254E7 /* Frameworks */,
 				230AD01B1B2CC993003254E7 /* Resources */,
-				230AD06A1B2CCA4E003254E7 /* Embed App Extensions */,
 				CF320CC553A1E4DAA505F9CF /* Copy Pods Resources */,
 				1413DF078EFEAAC55AE7F564 /* Embed Pods Frameworks */,
+				87FA64731C3F62E70028F7FD /* Embed Watch Content */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				230AD0621B2CCA4E003254E7 /* PBXTargetDependency */,
+				87FA64701C3F62E70028F7FD /* PBXTargetDependency */,
 			);
 			name = MenMa;
 			productName = MenMa;
@@ -302,27 +313,28 @@
 			buildRules = (
 			);
 			dependencies = (
-				230AD0581B2CCA4E003254E7 /* PBXTargetDependency */,
 			);
 			name = "MenMa WatchKit Extension";
 			productName = "MenMa WatchKit Extension";
 			productReference = 230AD0461B2CCA4E003254E7 /* MenMa WatchKit Extension.appex */;
-			productType = "com.apple.product-type.watchkit-extension";
+			productType = "com.apple.product-type.watchkit2-extension";
 		};
 		230AD0541B2CCA4E003254E7 /* MenMa WatchKit App */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 230AD0641B2CCA4E003254E7 /* Build configuration list for PBXNativeTarget "MenMa WatchKit App" */;
 			buildPhases = (
 				230AD0531B2CCA4E003254E7 /* Resources */,
+				87FA64721C3F62E70028F7FD /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				87FA646D1C3F62E70028F7FD /* PBXTargetDependency */,
 			);
 			name = "MenMa WatchKit App";
 			productName = "MenMa WatchKit App";
 			productReference = 230AD0551B2CCA4E003254E7 /* MenMa WatchKit App.app */;
-			productType = "com.apple.product-type.application.watchapp";
+			productType = "com.apple.product-type.application.watchapp2";
 		};
 /* End PBXNativeTarget section */
 
@@ -332,17 +344,21 @@
 			attributes = {
 				LastSwiftMigration = 0720;
 				LastSwiftUpdateCheck = 0720;
-				LastUpgradeCheck = 0630;
+				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = "Keita Ito";
 				TargetAttributes = {
 					230AD01C1B2CC993003254E7 = {
 						CreatedOnToolsVersion = 6.3.2;
+						DevelopmentTeam = D433NUFZ5K;
 						SystemCapabilities = {
 							com.apple.ApplicationGroups.iOS = {
 								enabled = 0;
 							};
 							com.apple.Maps.iOS = {
 								enabled = 1;
+							};
+							com.apple.iCloud = {
+								enabled = 0;
 							};
 						};
 					};
@@ -412,7 +428,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				230AD0521B2CCA4E003254E7 /* Images.xcassets in Resources */,
-				230AD0561B2CCA4E003254E7 /* MenMa WatchKit App.app in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -512,15 +527,15 @@
 			target = 230AD01C1B2CC993003254E7 /* MenMa */;
 			targetProxy = 230AD0331B2CC993003254E7 /* PBXContainerItemProxy */;
 		};
-		230AD0581B2CCA4E003254E7 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 230AD0541B2CCA4E003254E7 /* MenMa WatchKit App */;
-			targetProxy = 230AD0571B2CCA4E003254E7 /* PBXContainerItemProxy */;
-		};
-		230AD0621B2CCA4E003254E7 /* PBXTargetDependency */ = {
+		87FA646D1C3F62E70028F7FD /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 230AD0451B2CCA4E003254E7 /* MenMa WatchKit Extension */;
-			targetProxy = 230AD0611B2CCA4E003254E7 /* PBXContainerItemProxy */;
+			targetProxy = 87FA646C1C3F62E70028F7FD /* PBXContainerItemProxy */;
+		};
+		87FA64701C3F62E70028F7FD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 230AD0541B2CCA4E003254E7 /* MenMa WatchKit App */;
+			targetProxy = 87FA646F1C3F62E70028F7FD /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -574,6 +589,7 @@
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -645,10 +661,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = MenMa/MenMa.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = MenMa/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.keitaito.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "MenMa/MenMa-Bridging-Header.h";
@@ -662,10 +680,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = MenMa/MenMa.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = MenMa/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.keitaito.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "MenMa/MenMa-Bridging-Header.h";
@@ -688,6 +708,7 @@
 				);
 				INFOPLIST_FILE = MenMaTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.keitaito.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MenMa.app/MenMa";
@@ -706,6 +727,7 @@
 				);
 				INFOPLIST_FILE = MenMaTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.keitaito.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MenMa.app/MenMa";
@@ -718,18 +740,20 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
 				);
 				IBSC_MODULE = MenMa_WatchKit_Extension;
 				INFOPLIST_FILE = "MenMa WatchKit App/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				PRODUCT_BUNDLE_IDENTIFIER = com.keitaito.MenMa.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = 4;
-				"TARGETED_DEVICE_FAMILY[sdk=iphonesimulator*]" = "1,4";
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
 			};
 			name = Debug;
 		};
@@ -739,31 +763,39 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				IBSC_MODULE = MenMa_WatchKit_Extension;
 				INFOPLIST_FILE = "MenMa WatchKit App/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				PRODUCT_BUNDLE_IDENTIFIER = com.keitaito.MenMa.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = 4;
-				"TARGETED_DEVICE_FAMILY[sdk=iphonesimulator*]" = "1,4";
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
 			};
 			name = Release;
 		};
 		230AD0681B2CCA4E003254E7 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "MenMa WatchKit Extension/MenMa WatchKit Extension.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "iPhone Developer";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = "MenMa WatchKit Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.keitaito.MenMa.watchkitapp.watchkitextension;
 				PRODUCT_NAME = "${TARGET_NAME}";
 				PROVISIONING_PROFILE = "";
+				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
 			};
 			name = Debug;
 		};
@@ -772,11 +804,16 @@
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "MenMa WatchKit Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.keitaito.MenMa.watchkitapp.watchkitextension;
 				PRODUCT_NAME = "${TARGET_NAME}";
 				PROVISIONING_PROFILE = "";
+				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
 			};
 			name = Release;
 		};
