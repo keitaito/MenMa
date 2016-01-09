@@ -344,6 +344,7 @@
 		230AD0151B2CC993003254E7 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = MNM;
 				LastSwiftMigration = 0720;
 				LastSwiftUpdateCheck = 0720;
 				LastUpgradeCheck = 0720;
