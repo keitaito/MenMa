@@ -34,12 +34,13 @@ class InterfaceController: WKInterfaceController {
         } else {
             self.configureRamenTableView(NSArray())
         }
+        
+        print("test")
     }
 
     func configureRamenTableView (dataObjects: NSArray) {
         guard let cachedRamenPlaceNames = cachedRamenPlaceNames else {return}
         ramenTableView.setNumberOfRows(dataObjects.count, withRowType: "ramenRowController")
-        guard let cachedRamenPlaceNames = cachedRamenPlaceNames else {return}
         for var i = 0; i < cachedRamenPlaceNames.count; ++i {
             let ramenRow: RamenRowController = self.ramenTableView.rowControllerAtIndex(i) as! RamenRowController
             let dataObject: NSString = dataObjects.objectAtIndex(i) as! NSString
