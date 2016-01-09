@@ -36,6 +36,7 @@ class InterfaceController: WKInterfaceController {
         }
         
         print("test")
+        print("test2")
     }
 
     func configureRamenTableView (dataObjects: NSArray) {
