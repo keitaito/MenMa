@@ -9,6 +9,4 @@
 #ifndef MenMa_Menma_Bridging_Header_h
 #define MenMa_Menma_Bridging_Header_h
 
-#import <AFNetworking/AFNetworking.h>
-
 #endif
