@@ -1,0 +1,6 @@
+framework module Pods_MenMa {
+  umbrella header "Pods-MenMa-umbrella.h"
+
+  export *
+  module * { export * }
+}
