@@ -9,15 +9,44 @@
 import WatchKit
 import Foundation
 import MapKit
+import WatchConnectivity
 
-
-class InterfaceController: WKInterfaceController {
+class InterfaceController: WKInterfaceController, WCSessionDelegate {
 
     @IBOutlet var ramenMap: WKInterfaceMap!
     @IBOutlet var ramenTableView: WKInterfaceTable!
     let sharedDefaults: NSUserDefaults = NSUserDefaults(suiteName: "group.com.keitaito.MenMa")!
     //var tempArray: NSArray = ["tonkotsu🍜","shoyu🍜","miso🍜"]
     var cachedRamenPlaceNames: [String]? = []
+    
+    var session: WCSession? {
+        didSet {
+            if let session = session {
+                session.delegate = self
+                session.activateSession()
+            }
+        }
+    }
+    
+    func session(session: WCSession, didReceiveMessage message: [String : AnyObject]) {
+        let value = message["Value"] as? String
+        print(value)
+    }
+    
+//    func session(session: WCSession, didReceiveMessage message: [String : AnyObject], replyHandler: ([String : AnyObject]) -> Void) {
+//        //handle received message
+//        let value = message["Value"] as? String
+//        //use this to present immediately on the screen
+//        dispatch_async(dispatch_get_main_queue()) {
+//            self.messageLabel.setText(value)
+//        }
+//        //send a reply
+//        replyHandler(["Value":"Yes"])
+//    }
+    
+//    @IBAction func findRamen() {
+//        print("find ramen")
+//    }
     
     override func awakeWithContext(context: AnyObject?) {
         super.awakeWithContext(context)
@@ -36,7 +65,6 @@ class InterfaceController: WKInterfaceController {
         }
         
         print("test")
-        print("test2")
     }
 
     func configureRamenTableView (dataObjects: NSArray) {
@@ -59,5 +87,4 @@ class InterfaceController: WKInterfaceController {
         // This method is called when watch view controller is no longer visible
         super.didDeactivate()
     }
-
 }
