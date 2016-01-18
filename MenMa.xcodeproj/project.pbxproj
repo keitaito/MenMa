@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		230AD0231B2CC993003254E7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 230AD0221B2CC993003254E7 /* AppDelegate.swift */; };
-		230AD0251B2CC993003254E7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 230AD0241B2CC993003254E7 /* ViewController.swift */; };
 		230AD0281B2CC993003254E7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 230AD0261B2CC993003254E7 /* Main.storyboard */; };
 		230AD02A1B2CC993003254E7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 230AD0291B2CC993003254E7 /* Images.xcassets */; };
 		230AD02D1B2CC993003254E7 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 230AD02B1B2CC993003254E7 /* LaunchScreen.xib */; };
@@ -19,6 +18,8 @@
 		230AD0521B2CCA4E003254E7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 230AD0511B2CCA4E003254E7 /* Images.xcassets */; };
 		230AD05E1B2CCA4E003254E7 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 230AD05C1B2CCA4E003254E7 /* Interface.storyboard */; };
 		230AD0601B2CCA4E003254E7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 230AD05F1B2CCA4E003254E7 /* Images.xcassets */; };
+		87A83E221C4B3EF800BC37F8 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A83E211C4B3EF800BC37F8 /* MainViewController.swift */; };
+		87A8DDAE1C4B263000333374 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A8DDAD1C4B263000333374 /* NetworkManager.swift */; };
 		87FA646E1C3F62E70028F7FD /* MenMa WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 230AD0461B2CCA4E003254E7 /* MenMa WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		87FA64711C3F62E70028F7FD /* MenMa WatchKit App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 230AD0551B2CCA4E003254E7 /* MenMa WatchKit App.app */; };
 		AE318BCDBACAB69F924E2EC8 /* Pods_MenMa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D34D907DFCD53A03AA799C9 /* Pods_MenMa.framework */; };
@@ -81,7 +82,6 @@
 		230AD01D1B2CC993003254E7 /* MenMa.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MenMa.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		230AD0211B2CC993003254E7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		230AD0221B2CC993003254E7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		230AD0241B2CC993003254E7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		230AD0271B2CC993003254E7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		230AD0291B2CC993003254E7 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		230AD02C1B2CC993003254E7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -101,6 +101,8 @@
 		230AD05F1B2CCA4E003254E7 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		24C2CDB3A52AEE6B519296A4 /* Pods-MenMaTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MenMaTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MenMaTests/Pods-MenMaTests.release.xcconfig"; sourceTree = "<group>"; };
 		4D34D907DFCD53A03AA799C9 /* Pods_MenMa.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MenMa.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		87A83E211C4B3EF800BC37F8 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MainViewController.swift; path = ViewControllers/MainViewController.swift; sourceTree = "<group>"; };
+		87A8DDAD1C4B263000333374 /* NetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NetworkManager.swift; path = Managers/NetworkManager.swift; sourceTree = "<group>"; };
 		87FB4CF81C3FB61000CE926D /* MenMa WatchKit App.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "MenMa WatchKit App.entitlements"; sourceTree = "<group>"; };
 		97853643ADCA08A87B796739 /* Pods_MenMaTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MenMaTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ABC28DADE230AB4265E8640B /* Pods-MenMaTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MenMaTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MenMaTests/Pods-MenMaTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -190,7 +192,8 @@
 			children = (
 				D2B9C59B1B2D00D800FE6745 /* MenMa.entitlements */,
 				230AD0221B2CC993003254E7 /* AppDelegate.swift */,
-				230AD0241B2CC993003254E7 /* ViewController.swift */,
+				87A8DDB21C4B355400333374 /* ViewControllers */,
+				875D77961C424CE500BCDFF5 /* Managers */,
 				D29463711B2CDE4D004B5FBA /* Menma-Bridging-Header.h */,
 				230AD0261B2CC993003254E7 /* Main.storyboard */,
 				230AD0291B2CC993003254E7 /* Images.xcassets */,
@@ -265,6 +268,22 @@
 				230AD05B1B2CCA4E003254E7 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		875D77961C424CE500BCDFF5 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				87A8DDAD1C4B263000333374 /* NetworkManager.swift */,
+			);
+			name = Managers;
+			sourceTree = "<group>";
+		};
+		87A8DDB21C4B355400333374 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				87A83E211C4B3EF800BC37F8 /* MainViewController.swift */,
+			);
+			name = ViewControllers;
 			sourceTree = "<group>";
 		};
 		E05DD00B9D0AF63A6544B15D /* Frameworks */ = {
@@ -565,8 +584,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				230AD0251B2CC993003254E7 /* ViewController.swift in Sources */,
+				87A8DDAE1C4B263000333374 /* NetworkManager.swift in Sources */,
 				230AD0231B2CC993003254E7 /* AppDelegate.swift in Sources */,
+				87A83E221C4B3EF800BC37F8 /* MainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
