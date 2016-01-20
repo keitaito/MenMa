@@ -8,8 +8,9 @@
 
 import UIKit
 import Alamofire
+import WatchConnectivity
 
-class MainViewController: UIViewController {
+class MainViewController: UIViewController, WCSessionDelegate {
     
     let url: URLStringConvertible = "https://api.foursquare.com/v2/venues/search?ll=37.7992426,-122.4007343&query=ramen&oauth_token=REZLGOWAE45WNZ21NHBSNUBNOJXC32AQYNFJOQEB0SLDPTQP&v=20150613"
     let manager = NetworkManager()
