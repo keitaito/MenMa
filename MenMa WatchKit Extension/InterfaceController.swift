@@ -9,14 +9,14 @@
 import WatchKit
 import Foundation
 import MapKit
-import WatchConnectivity
 
-class InterfaceController: WKInterfaceController, WCSessionDelegate {
+class InterfaceController: WKInterfaceController {
 
     @IBOutlet var ramenMap: WKInterfaceMap!
     @IBOutlet var ramenTableView: WKInterfaceTable!
     let sharedDefaults: NSUserDefaults = NSUserDefaults(suiteName: "group.com.keitaito.MenMa")!
     //var tempArray: NSArray = ["tonkotsu🍜","shoyu🍜","miso🍜"]
+    
     var cachedRamenPlaceNames: [String]? = []
     
     override func awakeWithContext(context: AnyObject?) {

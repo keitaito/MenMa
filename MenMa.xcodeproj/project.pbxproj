@@ -24,6 +24,7 @@
 		87FA64711C3F62E70028F7FD /* MenMa WatchKit App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 230AD0551B2CCA4E003254E7 /* MenMa WatchKit App.app */; };
 		AE318BCDBACAB69F924E2EC8 /* Pods_MenMa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D34D907DFCD53A03AA799C9 /* Pods_MenMa.framework */; };
 		AF87627AC206424C15B49A76 /* Pods_MenMaTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 97853643ADCA08A87B796739 /* Pods_MenMaTests.framework */; };
+		D245C8441C5074F700059D66 /* StartInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D245C8431C5074F700059D66 /* StartInterfaceController.swift */; };
 		D29463621B2CCD0A004B5FBA /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D29463611B2CCD0A004B5FBA /* MapKit.framework */; };
 		D29463631B2CCD16004B5FBA /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D29463611B2CCD0A004B5FBA /* MapKit.framework */; };
 		D2DF268D1B2CFD6C001757E3 /* RamenRowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2DF268C1B2CFD6C001757E3 /* RamenRowController.swift */; };
@@ -108,6 +109,7 @@
 		ABC28DADE230AB4265E8640B /* Pods-MenMaTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MenMaTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MenMaTests/Pods-MenMaTests.debug.xcconfig"; sourceTree = "<group>"; };
 		ABF9C469947D2BAC1B2A6FB0 /* Pods-MenMa.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MenMa.release.xcconfig"; path = "Pods/Target Support Files/Pods-MenMa/Pods-MenMa.release.xcconfig"; sourceTree = "<group>"; };
 		C230EAC092EFCFE48F09DDC9 /* Pods-MenMa.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MenMa.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MenMa/Pods-MenMa.debug.xcconfig"; sourceTree = "<group>"; };
+		D245C8431C5074F700059D66 /* StartInterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartInterfaceController.swift; sourceTree = "<group>"; };
 		D29463611B2CCD0A004B5FBA /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		D29463711B2CDE4D004B5FBA /* Menma-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Menma-Bridging-Header.h"; sourceTree = "<group>"; };
 		D2B9C59B1B2D00D800FE6745 /* MenMa.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = MenMa.entitlements; sourceTree = "<group>"; };
@@ -232,7 +234,7 @@
 			isa = PBXGroup;
 			children = (
 				D2B9C59C1B2D013000FE6745 /* MenMa WatchKit Extension.entitlements */,
-				230AD04B1B2CCA4E003254E7 /* InterfaceController.swift */,
+				D245C8451C50750800059D66 /* InterfaceControllers */,
 				230AD04D1B2CCA4E003254E7 /* NotificationController.swift */,
 				230AD04F1B2CCA4E003254E7 /* GlanceController.swift */,
 				D2DF268C1B2CFD6C001757E3 /* RamenRowController.swift */,
@@ -284,6 +286,15 @@
 				87A83E211C4B3EF800BC37F8 /* MainViewController.swift */,
 			);
 			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		D245C8451C50750800059D66 /* InterfaceControllers */ = {
+			isa = PBXGroup;
+			children = (
+				230AD04B1B2CCA4E003254E7 /* InterfaceController.swift */,
+				D245C8431C5074F700059D66 /* StartInterfaceController.swift */,
+			);
+			name = InterfaceControllers;
 			sourceTree = "<group>";
 		};
 		E05DD00B9D0AF63A6544B15D /* Frameworks */ = {
@@ -604,6 +615,7 @@
 			files = (
 				230AD04E1B2CCA4E003254E7 /* NotificationController.swift in Sources */,
 				230AD04C1B2CCA4E003254E7 /* InterfaceController.swift in Sources */,
+				D245C8441C5074F700059D66 /* StartInterfaceController.swift in Sources */,
 				D2DF268D1B2CFD6C001757E3 /* RamenRowController.swift in Sources */,
 				230AD0501B2CCA4E003254E7 /* GlanceController.swift in Sources */,
 			);
