@@ -29,7 +29,7 @@
             <objects>
                 <controller identifier="findRamen" id="AgC-eL-Hgc" customClass="InterfaceController" customModule="MenMa_WatchKit_App" customModuleProvider="target">
                     <items>
-                        <label alignment="center" text="🍜" id="Qws-M1-ciJ"/>
+                        <label height="19.5" alignment="center" text="🍜" id="Qws-M1-ciJ"/>
                         <map height="125" alignment="left" id="FYY-0k-kIE"/>
                         <table alignment="left" id="Tdw-95-wGF">
                             <items>
@@ -47,12 +47,13 @@
                         </table>
                     </items>
                     <connections>
+                        <outlet property="messageLabel" destination="Qws-M1-ciJ" id="IHx-k3-mVj"/>
                         <outlet property="ramenMap" destination="FYY-0k-kIE" id="pnW-Lt-DA0"/>
                         <outlet property="ramenTableView" destination="Tdw-95-wGF" id="BIQ-dX-405"/>
                     </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="235" y="348"/>
+            <point key="canvasLocation" x="235" y="347.5"/>
         </scene>
         <!--Glance Interface Controller-->
         <scene sceneID="BOz-TT-tkC">

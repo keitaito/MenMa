@@ -9,18 +9,31 @@
 import WatchKit
 import Foundation
 import MapKit
+import WatchConnectivity
 
-class InterfaceController: WKInterfaceController {
+class InterfaceController: WKInterfaceController, WCSessionDelegate {
 
+    @IBOutlet var messageLabel: WKInterfaceLabel!
     @IBOutlet var ramenMap: WKInterfaceMap!
     @IBOutlet var ramenTableView: WKInterfaceTable!
     let sharedDefaults: NSUserDefaults = NSUserDefaults(suiteName: "group.com.keitaito.MenMa")!
     //var tempArray: NSArray = ["tonkotsu🍜","shoyu🍜","miso🍜"]
     
+    var session: WCSession!
     var cachedRamenPlaceNames: [String]? = []
     
     override func awakeWithContext(context: AnyObject?) {
         super.awakeWithContext(context)
+        
+        let messageToSend = ["value": "message sent successfully"]
+        session.sendMessage(messageToSend, replyHandler: { replyMessage in
+            //handle and present the message on screen
+            let value = replyMessage["value"] as? String
+//            self.messageLabel.setText(value)
+            }, errorHandler: {error in
+                // catch any errors here
+                print(error)
+        })
         
         let mapLocation: CLLocationCoordinate2D = CLLocationCoordinate2DMake(37, -122)
         let regionSpan: MKCoordinateSpan = MKCoordinateSpanMake(1, 1)
@@ -48,6 +61,17 @@ class InterfaceController: WKInterfaceController {
             
             ramenRow.ramenLabel.setText(dataObject as String)
         }
+    }
+    
+    func session(session: WCSession, didReceiveMessage message: [String : AnyObject], replyHandler: ([String : AnyObject]) -> Void) {
+        //handle received message
+        let value = message["value"] as? String
+        //use this to present immediately on the screen
+        dispatch_async(dispatch_get_main_queue()) {
+            self.messageLabel.setText(value)
+        }
+        //send a reply
+        replyHandler(["value":"RAMEN YEAH"])
     }
     
     override func willActivate() {

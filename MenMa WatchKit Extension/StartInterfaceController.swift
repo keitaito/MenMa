@@ -22,29 +22,29 @@ class StartInterfaceController: WKInterfaceController, WCSessionDelegate {
     }
 
     @IBAction func startTapped() {
-        //pushControllerWithName("findRamen", context: ["segue": "pagebased", "data": "Passed through paage-based navigation"])
+        pushControllerWithName("findRamen", context: ["segue": "pagebased", "data": "Passed through paage-based navigation"])
     
-        let messageToSend = ["value": "message sent successfully"]
-        session.sendMessage(messageToSend, replyHandler: { replyMessage in
-            //handle and present the message on screen
-            let value = replyMessage["value"] as? String
-            self.messageLabel.setText(value)
-            }, errorHandler: {error in
-                // catch any errors here
-                print(error)
-        })
+//        let messageToSend = ["value": "message sent successfully"]
+//        session.sendMessage(messageToSend, replyHandler: { replyMessage in
+//            //handle and present the message on screen
+//            let value = replyMessage["value"] as? String
+//            self.messageLabel.setText(value)
+//            }, errorHandler: {error in
+//                // catch any errors here
+//                print(error)
+//        })
     }
     
-    func session(session: WCSession, didReceiveMessage message: [String : AnyObject], replyHandler: ([String : AnyObject]) -> Void) {
-        //handle received message
-        let value = message["value"] as? String
-        //use this to present immediately on the screen
-        dispatch_async(dispatch_get_main_queue()) {
-            self.messageLabel.setText(value)
-        }
-        //send a reply
-        replyHandler(["value":"RAMEN YEAH"])
-    }
+//    func session(session: WCSession, didReceiveMessage message: [String : AnyObject], replyHandler: ([String : AnyObject]) -> Void) {
+//        //handle received message
+//        let value = message["value"] as? String
+//        //use this to present immediately on the screen
+//        dispatch_async(dispatch_get_main_queue()) {
+//            self.messageLabel.setText(value)
+//        }
+//        //send a reply
+//        replyHandler(["value":"RAMEN YEAH"])
+//    }
 
     override func willActivate() {
         // This method is called when watch view controller is about to be visible to user
