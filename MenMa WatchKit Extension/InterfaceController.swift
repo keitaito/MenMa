@@ -25,15 +25,11 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate {
     override func awakeWithContext(context: AnyObject?) {
         super.awakeWithContext(context)
         
-        let messageToSend = ["value": "message sent successfully"]
-        session.sendMessage(messageToSend, replyHandler: { replyMessage in
-            //handle and present the message on screen
-            let value = replyMessage["value"] as? String
-//            self.messageLabel.setText(value)
-            }, errorHandler: {error in
-                // catch any errors here
-                print(error)
-        })
+        if (WCSession.isSupported()) {
+            session = WCSession.defaultSession()
+            session.delegate = self
+            session.activateSession()
+        }
         
         let mapLocation: CLLocationCoordinate2D = CLLocationCoordinate2DMake(37, -122)
         let regionSpan: MKCoordinateSpan = MKCoordinateSpanMake(1, 1)
@@ -77,6 +73,17 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate {
     override func willActivate() {
         // This method is called when watch view controller is about to be visible to user
         super.willActivate()
+        
+        let messageToSend = ["value": "message sent successfully"]
+        session.sendMessage(messageToSend, replyHandler: { replyMessage in
+            //handle and present the message on screen
+            let value = replyMessage["value"] as? String
+            //            self.messageLabel.setText(value)
+            }, errorHandler: {error in
+                // catch any errors here
+                print(error)
+        })
+        
     }
 
     override func didDeactivate() {

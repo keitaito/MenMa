@@ -50,11 +50,11 @@ class StartInterfaceController: WKInterfaceController, WCSessionDelegate {
         // This method is called when watch view controller is about to be visible to user
         super.willActivate()
         
-        if (WCSession.isSupported()) {
-            session = WCSession.defaultSession()
-            session.delegate = self
-            session.activateSession()
-        }
+//        if (WCSession.isSupported()) {
+//            session = WCSession.defaultSession()
+//            session.delegate = self
+//            session.activateSession()
+//        }
     }
 
     override func didDeactivate() {
