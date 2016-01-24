@@ -44,7 +44,8 @@ struct NetworkManager {
     }
 }
 
-struct Venue {
+struct Venue: GeneratorType  {
+
     let name: String
     let id: String
     let url: URLStringConvertible?

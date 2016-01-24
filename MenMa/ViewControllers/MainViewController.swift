@@ -47,8 +47,15 @@ class MainViewController: UIViewController, WCSessionDelegate {
             self.label.text = value
         }
         //send a reply
-        replyHandler(["value":"RAMENMENMEN"])
+        
+
+        replyHandler(["value":self.venues as! AnyObject])
+        
     }
+    
+//    func session(session: WCSession, didReceiveMessage message: [String : AnyObject], replyHandler: ([String : AnyObject]) -> Void) {
+//        <#code#>
+//    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

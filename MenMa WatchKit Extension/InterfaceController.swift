@@ -43,9 +43,6 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate {
         } else {
             self.configureRamenTableView(NSArray())
         }
-        
-        print("test")
-        print("test2")
     }
 
     func configureRamenTableView (dataObjects: NSArray) {
