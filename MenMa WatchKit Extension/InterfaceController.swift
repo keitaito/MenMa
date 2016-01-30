@@ -9,18 +9,27 @@
 import WatchKit
 import Foundation
 import MapKit
+import WatchConnectivity
 
+class InterfaceController: WKInterfaceController, WCSessionDelegate {
 
-class InterfaceController: WKInterfaceController {
-
+    @IBOutlet var messageLabel: WKInterfaceLabel!
     @IBOutlet var ramenMap: WKInterfaceMap!
     @IBOutlet var ramenTableView: WKInterfaceTable!
     let sharedDefaults: NSUserDefaults = NSUserDefaults(suiteName: "group.com.keitaito.MenMa")!
     //var tempArray: NSArray = ["tonkotsu🍜","shoyu🍜","miso🍜"]
+    
+    var session: WCSession!
     var cachedRamenPlaceNames: [String]? = []
     
     override func awakeWithContext(context: AnyObject?) {
         super.awakeWithContext(context)
+        
+        if (WCSession.isSupported()) {
+            session = WCSession.defaultSession()
+            session.delegate = self
+            session.activateSession()
+        }
         
         let mapLocation: CLLocationCoordinate2D = CLLocationCoordinate2DMake(37, -122)
         let regionSpan: MKCoordinateSpan = MKCoordinateSpanMake(1, 1)
@@ -34,9 +43,6 @@ class InterfaceController: WKInterfaceController {
         } else {
             self.configureRamenTableView(NSArray())
         }
-        
-        print("test")
-        print("test2")
     }
 
     func configureRamenTableView (dataObjects: NSArray) {
@@ -50,9 +56,31 @@ class InterfaceController: WKInterfaceController {
         }
     }
     
+    func session(session: WCSession, didReceiveMessage message: [String : AnyObject], replyHandler: ([String : AnyObject]) -> Void) {
+        //handle received message
+        let value = message["value"] as? String
+        //use this to present immediately on the screen
+        dispatch_async(dispatch_get_main_queue()) {
+            self.messageLabel.setText(value)
+        }
+        //send a reply
+        replyHandler(["value":"RAMEN YEAH"])
+    }
+    
     override func willActivate() {
         // This method is called when watch view controller is about to be visible to user
         super.willActivate()
+        
+        let messageToSend = ["value": "message sent successfully"]
+        session.sendMessage(messageToSend, replyHandler: { replyMessage in
+            //handle and present the message on screen
+            let value = replyMessage["value"] as? String
+            //            self.messageLabel.setText(value)
+            }, errorHandler: {error in
+                // catch any errors here
+                print(error)
+        })
+        
     }
 
     override func didDeactivate() {
