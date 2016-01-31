@@ -25,7 +25,7 @@ class MainViewController: UIViewController, WCSessionDelegate, LocationManagerDe
     
     var venues: Array<Venue> = Array<Venue>() {
         didSet {
-            print(self.venues)
+//            print(self.venues)
         }
     }
 
@@ -63,7 +63,7 @@ class MainViewController: UIViewController, WCSessionDelegate, LocationManagerDe
         //send a reply
         
 
-        replyHandler(["value":self.venues as! AnyObject])
+        replyHandler(["value":self.venues])
         
     }
     

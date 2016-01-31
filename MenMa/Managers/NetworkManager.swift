@@ -43,19 +43,3 @@ struct NetworkManager {
         }
     }
 }
-
-struct Venue: GeneratorType  {
-
-    let name: String
-    let id: String
-    let url: URLStringConvertible?
-//    let location
-//    let menu
-//    let contact
-    
-    init(name: String, id: String, url: String?) {
-        self.name = name
-        self.id = id
-        self.url = url
-    }
-}
