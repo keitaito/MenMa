@@ -14,10 +14,14 @@ import CoreLocation
 @available(iOS 9.0, *) //only available for <iOS 9.0
 class MainViewController: UIViewController, WCSessionDelegate, LocationManagerDelegate {
     
+    // MARK: - IBOutlets
+    @IBOutlet weak var venuesLabel: UILabel!
+    @IBOutlet weak var latitudeLabel: UILabel!
+    @IBOutlet weak var longitudeLabel: UILabel!
+    
     // MARK: - Properties
     
     var session: WCSession!
-    @IBOutlet weak var label: UILabel!
     
     let url: URLStringConvertible = "https://api.foursquare.com/v2/venues/search?ll=37.7992426,-122.4007343&query=ramen&oauth_token=REZLGOWAE45WNZ21NHBSNUBNOJXC32AQYNFJOQEB0SLDPTQP&v=20150613"
     let manager = NetworkManager()
@@ -58,7 +62,7 @@ class MainViewController: UIViewController, WCSessionDelegate, LocationManagerDe
         //handle received message
         let value = message["value"] as? String
         dispatch_async(dispatch_get_main_queue()) {
-            self.label.text = value
+            self.venuesLabel.text = value
         }
         //send a reply
         
@@ -71,6 +75,8 @@ class MainViewController: UIViewController, WCSessionDelegate, LocationManagerDe
     
     func locationManagerDidReceiveLocation(location: CLLocation) {
         print("latitude: \(location.coordinate.latitude), longitude \(location.coordinate.longitude)\n")
+        self.latitudeLabel.text = String(location.coordinate.latitude)
+        self.longitudeLabel.text = String(location.coordinate.longitude)
     }
     
     override func didReceiveMemoryWarning() {
