@@ -23,6 +23,7 @@
 		87A83E221C4B3EF800BC37F8 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A83E211C4B3EF800BC37F8 /* MainViewController.swift */; };
 		87A8DDAE1C4B263000333374 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A8DDAD1C4B263000333374 /* NetworkManager.swift */; };
 		87E40F681C5D8C7200CBE1BB /* Venue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87E40F671C5D8C7200CBE1BB /* Venue.swift */; };
+		87E40F6A1C5D8D2E00CBE1BB /* Venue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87E40F671C5D8C7200CBE1BB /* Venue.swift */; };
 		87FA646E1C3F62E70028F7FD /* MenMa WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 230AD0461B2CCA4E003254E7 /* MenMa WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		87FA64711C3F62E70028F7FD /* MenMa WatchKit App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 230AD0551B2CCA4E003254E7 /* MenMa WatchKit App.app */; };
 		AE318BCDBACAB69F924E2EC8 /* Pods_MenMa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D34D907DFCD53A03AA799C9 /* Pods_MenMa.framework */; };
@@ -634,6 +635,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				230AD04E1B2CCA4E003254E7 /* NotificationController.swift in Sources */,
+				87E40F6A1C5D8D2E00CBE1BB /* Venue.swift in Sources */,
 				230AD04C1B2CCA4E003254E7 /* InterfaceController.swift in Sources */,
 				D245C8441C5074F700059D66 /* StartInterfaceController.swift in Sources */,
 				D2DF268D1B2CFD6C001757E3 /* RamenRowController.swift in Sources */,
