@@ -9,15 +9,19 @@
 import UIKit
 import Alamofire
 import WatchConnectivity
+import CoreLocation
 
 @available(iOS 9.0, *) //only available for <iOS 9.0
-class MainViewController: UIViewController, WCSessionDelegate {
+class MainViewController: UIViewController, WCSessionDelegate, LocationManagerDelegate {
+    
+    // MARK: - Properties
     
     var session: WCSession!
     @IBOutlet weak var label: UILabel!
     
     let url: URLStringConvertible = "https://api.foursquare.com/v2/venues/search?ll=37.7992426,-122.4007343&query=ramen&oauth_token=REZLGOWAE45WNZ21NHBSNUBNOJXC32AQYNFJOQEB0SLDPTQP&v=20150613"
     let manager = NetworkManager()
+    let locationManager = LocationManager()
     
     var venues: Array<Venue> = Array<Venue>() {
         didSet {
@@ -25,8 +29,13 @@ class MainViewController: UIViewController, WCSessionDelegate {
         }
     }
 
+    // MARK: - Life Cycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // Set self to locationManager's delegate.
+        locationManager.delegate = self;
 
         if (WCSession.isSupported()) {
             session = WCSession.defaultSession()
@@ -38,7 +47,12 @@ class MainViewController: UIViewController, WCSessionDelegate {
         manager.download(url: self.url) { (results) -> Void in
             self.venues = results
         }
+        
+        locationManager.startStandardUpdates()
     }
+    
+    
+    // MARK: - WCSessionDelegate
     
     func session(session: WCSession, didReceiveMessage message: [String : AnyObject], replyHandler: ([String : AnyObject]) -> Void) {
         //handle received message
@@ -53,10 +67,12 @@ class MainViewController: UIViewController, WCSessionDelegate {
         
     }
     
-//    func session(session: WCSession, didReceiveMessage message: [String : AnyObject], replyHandler: ([String : AnyObject]) -> Void) {
-//        <#code#>
-//    }
-
+    // MARK: - LocationManagerDelegate
+    
+    func locationManagerDidReceiveLocation(location: CLLocation) {
+        print("latitude: \(location.coordinate.latitude), longitude \(location.coordinate.longitude)\n")
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

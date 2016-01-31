@@ -18,6 +18,8 @@
 		230AD0521B2CCA4E003254E7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 230AD0511B2CCA4E003254E7 /* Images.xcassets */; };
 		230AD05E1B2CCA4E003254E7 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 230AD05C1B2CCA4E003254E7 /* Interface.storyboard */; };
 		230AD0601B2CCA4E003254E7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 230AD05F1B2CCA4E003254E7 /* Images.xcassets */; };
+		877BC9F31C54539B0076939B /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 877BC9F21C54539B0076939B /* CoreLocation.framework */; };
+		877BC9F51C5455510076939B /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 877BC9F41C5455510076939B /* LocationManager.swift */; };
 		87A83E221C4B3EF800BC37F8 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A83E211C4B3EF800BC37F8 /* MainViewController.swift */; };
 		87A8DDAE1C4B263000333374 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A8DDAD1C4B263000333374 /* NetworkManager.swift */; };
 		87FA646E1C3F62E70028F7FD /* MenMa WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 230AD0461B2CCA4E003254E7 /* MenMa WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -102,6 +104,8 @@
 		230AD05F1B2CCA4E003254E7 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		24C2CDB3A52AEE6B519296A4 /* Pods-MenMaTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MenMaTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MenMaTests/Pods-MenMaTests.release.xcconfig"; sourceTree = "<group>"; };
 		4D34D907DFCD53A03AA799C9 /* Pods_MenMa.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MenMa.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		877BC9F21C54539B0076939B /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		877BC9F41C5455510076939B /* LocationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		87A83E211C4B3EF800BC37F8 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MainViewController.swift; path = ViewControllers/MainViewController.swift; sourceTree = "<group>"; };
 		87A8DDAD1C4B263000333374 /* NetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NetworkManager.swift; path = Managers/NetworkManager.swift; sourceTree = "<group>"; };
 		87FB4CF81C3FB61000CE926D /* MenMa WatchKit App.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "MenMa WatchKit App.entitlements"; sourceTree = "<group>"; };
@@ -122,6 +126,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				877BC9F31C54539B0076939B /* CoreLocation.framework in Frameworks */,
 				D29463631B2CCD16004B5FBA /* MapKit.framework in Frameworks */,
 				AE318BCDBACAB69F924E2EC8 /* Pods_MenMa.framework in Frameworks */,
 			);
@@ -276,6 +281,7 @@
 			isa = PBXGroup;
 			children = (
 				87A8DDAD1C4B263000333374 /* NetworkManager.swift */,
+				877BC9F41C5455510076939B /* LocationManager.swift */,
 			);
 			name = Managers;
 			sourceTree = "<group>";
@@ -300,6 +306,7 @@
 		E05DD00B9D0AF63A6544B15D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				877BC9F21C54539B0076939B /* CoreLocation.framework */,
 				4D34D907DFCD53A03AA799C9 /* Pods_MenMa.framework */,
 				97853643ADCA08A87B796739 /* Pods_MenMaTests.framework */,
 			);
@@ -595,6 +602,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				877BC9F51C5455510076939B /* LocationManager.swift in Sources */,
 				87A8DDAE1C4B263000333374 /* NetworkManager.swift in Sources */,
 				230AD0231B2CC993003254E7 /* AppDelegate.swift in Sources */,
 				87A83E221C4B3EF800BC37F8 /* MainViewController.swift in Sources */,
