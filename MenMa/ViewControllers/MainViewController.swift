@@ -24,12 +24,17 @@ class MainViewController: UIViewController, WCSessionDelegate, LocationManagerDe
     var session: WCSession!
     
     let url: URLStringConvertible = "https://api.foursquare.com/v2/venues/search?ll=37.7992426,-122.4007343&query=ramen&oauth_token=REZLGOWAE45WNZ21NHBSNUBNOJXC32AQYNFJOQEB0SLDPTQP&v=20150613"
+    let baseURL: URLStringConvertible = "https://api.foursquare.com/v2/venues/search"
+    var parameters: [String: AnyObject]? = ["ll" : "", "query" : "ramen", "oauth_token" : "REZLGOWAE45WNZ21NHBSNUBNOJXC32AQYNFJOQEB0SLDPTQP&v=20150613"]
+    
     let manager = NetworkManager()
     let locationManager = LocationManager()
     
     var venues: Array<Venue> = Array<Venue>() {
         didSet {
-//            print(self.venues)
+            venues.forEach {
+                print("name: \($0.name)")
+            }
         }
     }
 
@@ -55,6 +60,11 @@ class MainViewController: UIViewController, WCSessionDelegate, LocationManagerDe
         locationManager.startStandardUpdates()
     }
     
+    @IBAction func didTapDownloadButton(sender: UIButton) {
+        manager.download(url: url, parameters: parameters) { (results) -> Void in
+            self.venues = results
+        }
+    }
     
     // MARK: - WCSessionDelegate
     
@@ -64,9 +74,8 @@ class MainViewController: UIViewController, WCSessionDelegate, LocationManagerDe
         dispatch_async(dispatch_get_main_queue()) {
             self.venuesLabel.text = value
         }
-        //send a reply
         
-
+        //send a reply
         replyHandler(["value":self.venues])
         
     }
@@ -77,6 +86,9 @@ class MainViewController: UIViewController, WCSessionDelegate, LocationManagerDe
         print("latitude: \(location.coordinate.latitude), longitude \(location.coordinate.longitude)\n")
         self.latitudeLabel.text = String(location.coordinate.latitude)
         self.longitudeLabel.text = String(location.coordinate.longitude)
+        
+        let llString: String = locationManager.urlParameter(location: location)
+        parameters?.updateValue(llString, forKey: "ll")
     }
     
     override func didReceiveMemoryWarning() {

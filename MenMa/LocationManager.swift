@@ -21,7 +21,6 @@ class LocationManager: NSObject, CLLocationManagerDelegate {
     override init() {
         manager = CLLocationManager()
         super.init()
-//        self.startStandardUpdates()
     }
     
     func startStandardUpdates() {
@@ -34,7 +33,8 @@ class LocationManager: NSObject, CLLocationManagerDelegate {
         }
         manager.delegate = self
         manager.desiredAccuracy = kCLLocationAccuracyBest
-        manager.distanceFilter = 500
+        // distanceFilter is disabled for dev.
+//        manager.distanceFilter = 500
         
         manager.startUpdatingLocation()
     }
@@ -44,17 +44,24 @@ class LocationManager: NSObject, CLLocationManagerDelegate {
         let lastLocation = locations.last
         guard let location = lastLocation else { print("No location data"); return }
         
-        let eventDate = location.timestamp
-        let howRecent = eventDate.timeIntervalSinceNow
-        if abs(howRecent) < 15.0 {
+        // howRecent check is disabled for dev.
+//        let eventDate = location.timestamp
+//        let howRecent = eventDate.timeIntervalSinceNow
+//        if abs(howRecent) < 15.0 {
             // If the event is recent, do something with it.
 //            print("latitude: \(location.coordinate.latitude), longitude \(location.coordinate.longitude)\n")
             delegate?.locationManagerDidReceiveLocation(location)
-        }
+//        }
     }
     
     func locationManager(manager: CLLocationManager, didFailWithError error: NSError) {
         print(error.localizedDescription);
     }
     
+    func urlParameter(location location: CLLocation) -> String {
+        let latitude = String(location.coordinate.latitude)
+        let longitude = String(location.coordinate.longitude)
+        let result = "\(latitude),\(longitude)"
+        return result
+    }
 }

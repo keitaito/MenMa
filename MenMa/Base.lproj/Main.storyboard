@@ -26,21 +26,30 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="longitudeLabel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Le-0R-29b" userLabel="longitudeLabel">
                                 <rect key="frame" x="243" y="110" width="113.5" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="latitudeLabel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rWU-k7-5DZ" userLabel="latitudeLabel">
                                 <rect key="frame" x="250" y="70" width="99" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JlO-ij-4FP">
+                                <rect key="frame" x="242" y="285" width="115" height="30"/>
+                                <state key="normal" title="Re-download 🍜"/>
+                                <connections>
+                                    <action selector="didTapDownloadButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="iu9-u2-SZf"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="rWU-k7-5DZ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="1ea-MI-atI"/>
                             <constraint firstItem="6Le-0R-29b" firstAttribute="top" secondItem="rWU-k7-5DZ" secondAttribute="bottom" constant="20" id="BSj-x3-dWK"/>
+                            <constraint firstItem="JlO-ij-4FP" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="H5R-wi-42f"/>
                             <constraint firstItem="zef-Hr-hra" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="O4O-Ap-9oS"/>
+                            <constraint firstItem="JlO-ij-4FP" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="STT-cI-ZIg"/>
                             <constraint firstItem="zef-Hr-hra" firstAttribute="top" secondItem="6Le-0R-29b" secondAttribute="bottom" constant="20" id="XY4-da-pt4"/>
                             <constraint firstItem="6Le-0R-29b" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="qgg-MU-iRT"/>
                             <constraint firstItem="rWU-k7-5DZ" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="50" id="tLi-3t-6V3"/>
