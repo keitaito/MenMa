@@ -58,6 +58,11 @@ class MainViewController: UIViewController, WCSessionDelegate, LocationManagerDe
         }
         
         locationManager.startStandardUpdates()
+        
+        // Test code for unit test.
+        let aSubView = UIView(frame: CGRectMake(self.view.center.x, self.view.center.y, 20, 20))
+        aSubView.backgroundColor = UIColor.redColor()
+        self.view.addSubview(aSubView)
     }
     
     @IBAction func didTapDownloadButton(sender: UIButton) {

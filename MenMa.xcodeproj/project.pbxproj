@@ -25,6 +25,7 @@
 		87D725A01C5DBB8F00EF0D4F /* Venue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87E40F671C5D8C7200CBE1BB /* Venue.swift */; };
 		87E40F681C5D8C7200CBE1BB /* Venue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87E40F671C5D8C7200CBE1BB /* Venue.swift */; };
 		87FA06551C6592F000C46D81 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 87FA06541C6592F000C46D81 /* MapKit.framework */; };
+		87FA06591C65AA5A00C46D81 /* MainViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87FA06581C65AA5A00C46D81 /* MainViewControllerTests.swift */; };
 		87FA646E1C3F62E70028F7FD /* MenMa WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 230AD0461B2CCA4E003254E7 /* MenMa WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		87FA64711C3F62E70028F7FD /* MenMa WatchKit App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 230AD0551B2CCA4E003254E7 /* MenMa WatchKit App.app */; };
 		8833AB338E75BF12C5FC0AD3 /* Pods_MenMaTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09B27940291E910265A64095 /* Pods_MenMaTests.framework */; };
@@ -116,6 +117,7 @@
 		87A8DDAD1C4B263000333374 /* NetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NetworkManager.swift; path = Managers/NetworkManager.swift; sourceTree = "<group>"; };
 		87E40F671C5D8C7200CBE1BB /* Venue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Venue.swift; path = Models/Venue.swift; sourceTree = "<group>"; };
 		87FA06541C6592F000C46D81 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS2.1.sdk/System/Library/Frameworks/MapKit.framework; sourceTree = DEVELOPER_DIR; };
+		87FA06581C65AA5A00C46D81 /* MainViewControllerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewControllerTests.swift; sourceTree = "<group>"; };
 		87FB4CF81C3FB61000CE926D /* MenMa WatchKit App.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "MenMa WatchKit App.entitlements"; sourceTree = "<group>"; };
 		A4134BE54F12589E81C2F72C /* Pods-MenMaTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MenMaTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MenMaTests/Pods-MenMaTests.release.xcconfig"; sourceTree = "<group>"; };
 		D06002793124ABCD70465418 /* Pods_MenMa_WatchKit_Extension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MenMa_WatchKit_Extension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -217,6 +219,7 @@
 			isa = PBXGroup;
 			children = (
 				230AD0381B2CC993003254E7 /* MenMaTests.swift */,
+				87FA06581C65AA5A00C46D81 /* MainViewControllerTests.swift */,
 				230AD0361B2CC993003254E7 /* Supporting Files */,
 			);
 			path = MenMaTests;
@@ -681,6 +684,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				230AD0391B2CC993003254E7 /* MenMaTests.swift in Sources */,
+				87FA06591C65AA5A00C46D81 /* MainViewControllerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
