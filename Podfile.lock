@@ -1,10 +1,16 @@
 PODS:
   - Alamofire (3.1.4)
+  - Nimble (3.0.0)
+  - Quick (0.9.0)
 
 DEPENDENCIES:
   - Alamofire (~> 3.0)
+  - Nimble (= 3.0.0)
+  - Quick (~> 0.9.0)
 
 SPEC CHECKSUMS:
   Alamofire: fbc829692f351fa1d8a31dd75fd7f7f56fea31fb
+  Nimble: 4c353d43735b38b545cbb4cb91504588eb5de926
+  Quick: 332eb1da73125a2106dd637424c803f2ae97e4a9
 
 COCOAPODS: 0.39.0
