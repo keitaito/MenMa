@@ -18,6 +18,7 @@ class MainViewController: UIViewController, WCSessionDelegate, LocationManagerDe
     @IBOutlet weak var venuesLabel: UILabel!
     @IBOutlet weak var latitudeLabel: UILabel!
     @IBOutlet weak var longitudeLabel: UILabel!
+    @IBOutlet weak var redownloadButton: UIButton!
     
     // MARK: - Properties
     

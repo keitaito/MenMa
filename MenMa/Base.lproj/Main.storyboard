@@ -58,6 +58,7 @@
                     <connections>
                         <outlet property="latitudeLabel" destination="rWU-k7-5DZ" id="fPX-GL-2ja"/>
                         <outlet property="longitudeLabel" destination="6Le-0R-29b" id="YPv-1O-d5i"/>
+                        <outlet property="redownloadButton" destination="JlO-ij-4FP" id="El5-g4-cgB"/>
                         <outlet property="venuesLabel" destination="zef-Hr-hra" id="8Ju-KH-63t"/>
                     </connections>
                 </viewController>
