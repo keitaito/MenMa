@@ -18,6 +18,7 @@
 		230AD0521B2CCA4E003254E7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 230AD0511B2CCA4E003254E7 /* Images.xcassets */; };
 		230AD05E1B2CCA4E003254E7 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 230AD05C1B2CCA4E003254E7 /* Interface.storyboard */; };
 		230AD0601B2CCA4E003254E7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 230AD05F1B2CCA4E003254E7 /* Images.xcassets */; };
+		874C808B1C65E3D30030CDFC /* VenueTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 874C808A1C65E3D30030CDFC /* VenueTests.swift */; };
 		877BC9F31C54539B0076939B /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 877BC9F21C54539B0076939B /* CoreLocation.framework */; };
 		877BC9F51C5455510076939B /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 877BC9F41C5455510076939B /* LocationManager.swift */; };
 		87A83E221C4B3EF800BC37F8 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A83E211C4B3EF800BC37F8 /* MainViewController.swift */; };
@@ -111,6 +112,7 @@
 		239DE93CAB9AF4728B3C04CF /* Pods-MenMa WatchKit Extension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MenMa WatchKit Extension.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MenMa WatchKit Extension/Pods-MenMa WatchKit Extension.debug.xcconfig"; sourceTree = "<group>"; };
 		377D3A5240FEA8E8F0948C2E /* Pods_MenMa.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MenMa.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5013496447ACC96DC906DD8B /* Pods-MenMa.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MenMa.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MenMa/Pods-MenMa.debug.xcconfig"; sourceTree = "<group>"; };
+		874C808A1C65E3D30030CDFC /* VenueTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VenueTests.swift; sourceTree = "<group>"; };
 		877BC9F21C54539B0076939B /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		877BC9F41C5455510076939B /* LocationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		87A83E211C4B3EF800BC37F8 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MainViewController.swift; path = ViewControllers/MainViewController.swift; sourceTree = "<group>"; };
@@ -220,6 +222,7 @@
 			children = (
 				230AD0381B2CC993003254E7 /* MenMaTests.swift */,
 				87FA06581C65AA5A00C46D81 /* MainViewControllerTests.swift */,
+				874C808A1C65E3D30030CDFC /* VenueTests.swift */,
 				230AD0361B2CC993003254E7 /* Supporting Files */,
 			);
 			path = MenMaTests;
@@ -683,6 +686,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				874C808B1C65E3D30030CDFC /* VenueTests.swift in Sources */,
 				230AD0391B2CC993003254E7 /* MenMaTests.swift in Sources */,
 				87FA06591C65AA5A00C46D81 /* MainViewControllerTests.swift in Sources */,
 			);
