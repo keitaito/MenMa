@@ -18,12 +18,17 @@
 		230AD0521B2CCA4E003254E7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 230AD0511B2CCA4E003254E7 /* Images.xcassets */; };
 		230AD05E1B2CCA4E003254E7 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 230AD05C1B2CCA4E003254E7 /* Interface.storyboard */; };
 		230AD0601B2CCA4E003254E7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 230AD05F1B2CCA4E003254E7 /* Images.xcassets */; };
+		877BC9F31C54539B0076939B /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 877BC9F21C54539B0076939B /* CoreLocation.framework */; };
+		877BC9F51C5455510076939B /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 877BC9F41C5455510076939B /* LocationManager.swift */; };
 		87A83E221C4B3EF800BC37F8 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A83E211C4B3EF800BC37F8 /* MainViewController.swift */; };
 		87A8DDAE1C4B263000333374 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A8DDAD1C4B263000333374 /* NetworkManager.swift */; };
+		87D725A01C5DBB8F00EF0D4F /* Venue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87E40F671C5D8C7200CBE1BB /* Venue.swift */; };
+		87E40F681C5D8C7200CBE1BB /* Venue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87E40F671C5D8C7200CBE1BB /* Venue.swift */; };
 		87FA646E1C3F62E70028F7FD /* MenMa WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 230AD0461B2CCA4E003254E7 /* MenMa WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		87FA64711C3F62E70028F7FD /* MenMa WatchKit App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 230AD0551B2CCA4E003254E7 /* MenMa WatchKit App.app */; };
-		AE318BCDBACAB69F924E2EC8 /* Pods_MenMa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D34D907DFCD53A03AA799C9 /* Pods_MenMa.framework */; };
-		AF87627AC206424C15B49A76 /* Pods_MenMaTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 97853643ADCA08A87B796739 /* Pods_MenMaTests.framework */; };
+		8833AB338E75BF12C5FC0AD3 /* Pods_MenMaTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09B27940291E910265A64095 /* Pods_MenMaTests.framework */; };
+		9B2B4594C0A88C6EA0957FF6 /* Pods_MenMa_WatchKit_Extension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D06002793124ABCD70465418 /* Pods_MenMa_WatchKit_Extension.framework */; };
+		B2C115C32069B06CD8FCE357 /* Pods_MenMa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 377D3A5240FEA8E8F0948C2E /* Pods_MenMa.framework */; };
 		D245C8441C5074F700059D66 /* StartInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D245C8431C5074F700059D66 /* StartInterfaceController.swift */; };
 		D29463621B2CCD0A004B5FBA /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D29463611B2CCD0A004B5FBA /* MapKit.framework */; };
 		D29463631B2CCD16004B5FBA /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D29463611B2CCD0A004B5FBA /* MapKit.framework */; };
@@ -80,6 +85,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		09B27940291E910265A64095 /* Pods_MenMaTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MenMaTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		10CC93438ADAB446C005041D /* Pods-MenMa.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MenMa.release.xcconfig"; path = "Pods/Target Support Files/Pods-MenMa/Pods-MenMa.release.xcconfig"; sourceTree = "<group>"; };
+		22D6F1AB8D9B4C6FF33FA8C6 /* Pods-MenMaTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MenMaTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MenMaTests/Pods-MenMaTests.debug.xcconfig"; sourceTree = "<group>"; };
 		230AD01D1B2CC993003254E7 /* MenMa.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MenMa.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		230AD0211B2CC993003254E7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		230AD0221B2CC993003254E7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -100,21 +108,24 @@
 		230AD05B1B2CCA4E003254E7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		230AD05D1B2CCA4E003254E7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
 		230AD05F1B2CCA4E003254E7 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		24C2CDB3A52AEE6B519296A4 /* Pods-MenMaTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MenMaTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MenMaTests/Pods-MenMaTests.release.xcconfig"; sourceTree = "<group>"; };
-		4D34D907DFCD53A03AA799C9 /* Pods_MenMa.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MenMa.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		239DE93CAB9AF4728B3C04CF /* Pods-MenMa WatchKit Extension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MenMa WatchKit Extension.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MenMa WatchKit Extension/Pods-MenMa WatchKit Extension.debug.xcconfig"; sourceTree = "<group>"; };
+		377D3A5240FEA8E8F0948C2E /* Pods_MenMa.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MenMa.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5013496447ACC96DC906DD8B /* Pods-MenMa.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MenMa.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MenMa/Pods-MenMa.debug.xcconfig"; sourceTree = "<group>"; };
+		877BC9F21C54539B0076939B /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		877BC9F41C5455510076939B /* LocationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		87A83E211C4B3EF800BC37F8 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MainViewController.swift; path = ViewControllers/MainViewController.swift; sourceTree = "<group>"; };
 		87A8DDAD1C4B263000333374 /* NetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NetworkManager.swift; path = Managers/NetworkManager.swift; sourceTree = "<group>"; };
+		87E40F671C5D8C7200CBE1BB /* Venue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Venue.swift; path = Models/Venue.swift; sourceTree = "<group>"; };
 		87FB4CF81C3FB61000CE926D /* MenMa WatchKit App.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "MenMa WatchKit App.entitlements"; sourceTree = "<group>"; };
-		97853643ADCA08A87B796739 /* Pods_MenMaTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MenMaTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		ABC28DADE230AB4265E8640B /* Pods-MenMaTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MenMaTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MenMaTests/Pods-MenMaTests.debug.xcconfig"; sourceTree = "<group>"; };
-		ABF9C469947D2BAC1B2A6FB0 /* Pods-MenMa.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MenMa.release.xcconfig"; path = "Pods/Target Support Files/Pods-MenMa/Pods-MenMa.release.xcconfig"; sourceTree = "<group>"; };
-		C230EAC092EFCFE48F09DDC9 /* Pods-MenMa.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MenMa.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MenMa/Pods-MenMa.debug.xcconfig"; sourceTree = "<group>"; };
+		A4134BE54F12589E81C2F72C /* Pods-MenMaTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MenMaTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MenMaTests/Pods-MenMaTests.release.xcconfig"; sourceTree = "<group>"; };
+		D06002793124ABCD70465418 /* Pods_MenMa_WatchKit_Extension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MenMa_WatchKit_Extension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D245C8431C5074F700059D66 /* StartInterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartInterfaceController.swift; sourceTree = "<group>"; };
 		D29463611B2CCD0A004B5FBA /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		D29463711B2CDE4D004B5FBA /* Menma-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Menma-Bridging-Header.h"; sourceTree = "<group>"; };
 		D2B9C59B1B2D00D800FE6745 /* MenMa.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = MenMa.entitlements; sourceTree = "<group>"; };
 		D2B9C59C1B2D013000FE6745 /* MenMa WatchKit Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "MenMa WatchKit Extension.entitlements"; sourceTree = "<group>"; };
 		D2DF268C1B2CFD6C001757E3 /* RamenRowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RamenRowController.swift; sourceTree = "<group>"; };
+		D3ACA5A090523C523B0C3F1B /* Pods-MenMa WatchKit Extension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MenMa WatchKit Extension.release.xcconfig"; path = "Pods/Target Support Files/Pods-MenMa WatchKit Extension/Pods-MenMa WatchKit Extension.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,8 +133,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				877BC9F31C54539B0076939B /* CoreLocation.framework in Frameworks */,
 				D29463631B2CCD16004B5FBA /* MapKit.framework in Frameworks */,
-				AE318BCDBACAB69F924E2EC8 /* Pods_MenMa.framework in Frameworks */,
+				B2C115C32069B06CD8FCE357 /* Pods_MenMa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -131,7 +143,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AF87627AC206424C15B49A76 /* Pods_MenMaTests.framework in Frameworks */,
+				8833AB338E75BF12C5FC0AD3 /* Pods_MenMaTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -140,6 +152,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D29463621B2CCD0A004B5FBA /* MapKit.framework in Frameworks */,
+				9B2B4594C0A88C6EA0957FF6 /* Pods_MenMa_WatchKit_Extension.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -153,17 +166,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		227FFA5AA40A5443310D15B3 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				C230EAC092EFCFE48F09DDC9 /* Pods-MenMa.debug.xcconfig */,
-				ABF9C469947D2BAC1B2A6FB0 /* Pods-MenMa.release.xcconfig */,
-				ABC28DADE230AB4265E8640B /* Pods-MenMaTests.debug.xcconfig */,
-				24C2CDB3A52AEE6B519296A4 /* Pods-MenMaTests.release.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
 		230AD0141B2CC993003254E7 = {
 			isa = PBXGroup;
 			children = (
@@ -173,8 +175,8 @@
 				230AD0471B2CCA4E003254E7 /* MenMa WatchKit Extension */,
 				230AD0591B2CCA4E003254E7 /* MenMa WatchKit App */,
 				230AD01E1B2CC993003254E7 /* Products */,
-				227FFA5AA40A5443310D15B3 /* Pods */,
 				E05DD00B9D0AF63A6544B15D /* Frameworks */,
+				3B9B16D2259B8105AA0BE495 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -194,6 +196,7 @@
 			children = (
 				D2B9C59B1B2D00D800FE6745 /* MenMa.entitlements */,
 				230AD0221B2CC993003254E7 /* AppDelegate.swift */,
+				87E40F691C5D8C7600CBE1BB /* Models */,
 				87A8DDB21C4B355400333374 /* ViewControllers */,
 				875D77961C424CE500BCDFF5 /* Managers */,
 				D29463711B2CDE4D004B5FBA /* Menma-Bridging-Header.h */,
@@ -272,10 +275,24 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		3B9B16D2259B8105AA0BE495 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				5013496447ACC96DC906DD8B /* Pods-MenMa.debug.xcconfig */,
+				10CC93438ADAB446C005041D /* Pods-MenMa.release.xcconfig */,
+				239DE93CAB9AF4728B3C04CF /* Pods-MenMa WatchKit Extension.debug.xcconfig */,
+				D3ACA5A090523C523B0C3F1B /* Pods-MenMa WatchKit Extension.release.xcconfig */,
+				22D6F1AB8D9B4C6FF33FA8C6 /* Pods-MenMaTests.debug.xcconfig */,
+				A4134BE54F12589E81C2F72C /* Pods-MenMaTests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		875D77961C424CE500BCDFF5 /* Managers */ = {
 			isa = PBXGroup;
 			children = (
 				87A8DDAD1C4B263000333374 /* NetworkManager.swift */,
+				877BC9F41C5455510076939B /* LocationManager.swift */,
 			);
 			name = Managers;
 			sourceTree = "<group>";
@@ -286,6 +303,14 @@
 				87A83E211C4B3EF800BC37F8 /* MainViewController.swift */,
 			);
 			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		87E40F691C5D8C7600CBE1BB /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				87E40F671C5D8C7200CBE1BB /* Venue.swift */,
+			);
+			name = Models;
 			sourceTree = "<group>";
 		};
 		D245C8451C50750800059D66 /* InterfaceControllers */ = {
@@ -300,8 +325,10 @@
 		E05DD00B9D0AF63A6544B15D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				4D34D907DFCD53A03AA799C9 /* Pods_MenMa.framework */,
-				97853643ADCA08A87B796739 /* Pods_MenMaTests.framework */,
+				877BC9F21C54539B0076939B /* CoreLocation.framework */,
+				377D3A5240FEA8E8F0948C2E /* Pods_MenMa.framework */,
+				D06002793124ABCD70465418 /* Pods_MenMa_WatchKit_Extension.framework */,
+				09B27940291E910265A64095 /* Pods_MenMaTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -313,13 +340,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 230AD03C1B2CC993003254E7 /* Build configuration list for PBXNativeTarget "MenMa" */;
 			buildPhases = (
-				C5DD7FD63AF300A9946ABC32 /* Check Pods Manifest.lock */,
+				C40D30854341364AE1D97C74 /* Check Pods Manifest.lock */,
 				230AD0191B2CC993003254E7 /* Sources */,
 				230AD01A1B2CC993003254E7 /* Frameworks */,
 				230AD01B1B2CC993003254E7 /* Resources */,
 				87FA64731C3F62E70028F7FD /* Embed Watch Content */,
-				2EDD22A53627F7A99F4961E0 /* Embed Pods Frameworks */,
-				817A11BBA5CFF6639CBD87E8 /* Copy Pods Resources */,
+				ACBE1B55FC4838188EB01F36 /* Embed Pods Frameworks */,
+				10326637CB4305B3F4F7DCFC /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -335,12 +362,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 230AD03F1B2CC993003254E7 /* Build configuration list for PBXNativeTarget "MenMaTests" */;
 			buildPhases = (
-				0688B1DB26B733723CF9C3A8 /* Check Pods Manifest.lock */,
+				52A6BD3EC6BF9D8FB1C92A55 /* Check Pods Manifest.lock */,
 				230AD02E1B2CC993003254E7 /* Sources */,
 				230AD02F1B2CC993003254E7 /* Frameworks */,
 				230AD0301B2CC993003254E7 /* Resources */,
-				A1CF2A63923AB47177B17820 /* Embed Pods Frameworks */,
-				9BD1FA165A84B1F427598EEF /* Copy Pods Resources */,
+				5F3BA66510FD077AAB0AAD8F /* Embed Pods Frameworks */,
+				AD1F8B553BB51DEE79F41CD1 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -356,9 +383,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 230AD0671B2CCA4E003254E7 /* Build configuration list for PBXNativeTarget "MenMa WatchKit Extension" */;
 			buildPhases = (
+				B1978BD92C8DEB3FF865BDFE /* Check Pods Manifest.lock */,
 				230AD0421B2CCA4E003254E7 /* Sources */,
 				230AD0431B2CCA4E003254E7 /* Frameworks */,
 				230AD0441B2CCA4E003254E7 /* Resources */,
+				076C285E43A97161FBF51481 /* Embed Pods Frameworks */,
+				70BB75EFBFA90F5559C8A83B /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -498,22 +528,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		0688B1DB26B733723CF9C3A8 /* Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		2EDD22A53627F7A99F4961E0 /* Embed Pods Frameworks */ = {
+		076C285E43A97161FBF51481 /* Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -525,10 +540,10 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MenMa/Pods-MenMa-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MenMa WatchKit Extension/Pods-MenMa WatchKit Extension-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		817A11BBA5CFF6639CBD87E8 /* Copy Pods Resources */ = {
+		10326637CB4305B3F4F7DCFC /* Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -543,22 +558,22 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MenMa/Pods-MenMa-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		9BD1FA165A84B1F427598EEF /* Copy Pods Resources */ = {
+		52A6BD3EC6BF9D8FB1C92A55 /* Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Copy Pods Resources";
+			name = "Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MenMaTests/Pods-MenMaTests-resources.sh\"\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		A1CF2A63923AB47177B17820 /* Embed Pods Frameworks */ = {
+		5F3BA66510FD077AAB0AAD8F /* Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -573,7 +588,67 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MenMaTests/Pods-MenMaTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		C5DD7FD63AF300A9946ABC32 /* Check Pods Manifest.lock */ = {
+		70BB75EFBFA90F5559C8A83B /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MenMa WatchKit Extension/Pods-MenMa WatchKit Extension-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		ACBE1B55FC4838188EB01F36 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MenMa/Pods-MenMa-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AD1F8B553BB51DEE79F41CD1 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MenMaTests/Pods-MenMaTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B1978BD92C8DEB3FF865BDFE /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		C40D30854341364AE1D97C74 /* Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -595,6 +670,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				877BC9F51C5455510076939B /* LocationManager.swift in Sources */,
+				87E40F681C5D8C7200CBE1BB /* Venue.swift in Sources */,
 				87A8DDAE1C4B263000333374 /* NetworkManager.swift in Sources */,
 				230AD0231B2CC993003254E7 /* AppDelegate.swift in Sources */,
 				87A83E221C4B3EF800BC37F8 /* MainViewController.swift in Sources */,
@@ -614,6 +691,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				230AD04E1B2CCA4E003254E7 /* NotificationController.swift in Sources */,
+				87D725A01C5DBB8F00EF0D4F /* Venue.swift in Sources */,
 				230AD04C1B2CCA4E003254E7 /* InterfaceController.swift in Sources */,
 				D245C8441C5074F700059D66 /* StartInterfaceController.swift in Sources */,
 				D2DF268D1B2CFD6C001757E3 /* RamenRowController.swift in Sources */,
@@ -759,7 +837,7 @@
 		};
 		230AD03D1B2CC993003254E7 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C230EAC092EFCFE48F09DDC9 /* Pods-MenMa.debug.xcconfig */;
+			baseConfigurationReference = 5013496447ACC96DC906DD8B /* Pods-MenMa.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -777,7 +855,7 @@
 		};
 		230AD03E1B2CC993003254E7 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = ABF9C469947D2BAC1B2A6FB0 /* Pods-MenMa.release.xcconfig */;
+			baseConfigurationReference = 10CC93438ADAB446C005041D /* Pods-MenMa.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -794,12 +872,12 @@
 		};
 		230AD0401B2CC993003254E7 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = ABC28DADE230AB4265E8640B /* Pods-MenMaTests.debug.xcconfig */;
+			baseConfigurationReference = 22D6F1AB8D9B4C6FF33FA8C6 /* Pods-MenMaTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				FRAMEWORK_SEARCH_PATHS = "";
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -815,12 +893,12 @@
 		};
 		230AD0411B2CC993003254E7 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 24C2CDB3A52AEE6B519296A4 /* Pods-MenMaTests.release.xcconfig */;
+			baseConfigurationReference = A4134BE54F12589E81C2F72C /* Pods-MenMaTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				FRAMEWORK_SEARCH_PATHS = "";
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = MenMaTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.keitaito.$(PRODUCT_NAME:rfc1034identifier)";
@@ -876,6 +954,7 @@
 		};
 		230AD0681B2CCA4E003254E7 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 239DE93CAB9AF4728B3C04CF /* Pods-MenMa WatchKit Extension.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -898,6 +977,7 @@
 		};
 		230AD0691B2CCA4E003254E7 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D3ACA5A090523C523B0C3F1B /* Pods-MenMa WatchKit Extension.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";

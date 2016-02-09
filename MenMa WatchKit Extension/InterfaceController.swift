@@ -74,7 +74,7 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate {
         let messageToSend = ["value": "message sent successfully"]
         session.sendMessage(messageToSend, replyHandler: { replyMessage in
             //handle and present the message on screen
-            let value = replyMessage["value"] as? String
+            let value = replyMessage["value"] as? Venue
             //            self.messageLabel.setText(value)
             }, errorHandler: {error in
                 // catch any errors here

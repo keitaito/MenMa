@@ -13,49 +13,49 @@ struct NetworkManager {
     
     let manager = Alamofire.Manager.sharedInstance
     
+    func download(url url: URLStringConvertible, parameters: [String : AnyObject]?, completion: (results: Array<Venue>) -> Void) -> Void {
+        manager.request(.GET, url, parameters: parameters).responseJSON { (response: (Response<AnyObject, NSError>)) -> Void in
+            if let results = Venue.parse(response) {
+                completion(results: results)
+            }
+        }
+    }
+    
     func download(url url: URLStringConvertible, completion: (results: Array<Venue>) -> Void) -> Void {
-        
-        var resultsArray: Array<Venue> = Array<Venue>()
-        
         manager.request(.GET, url).responseJSON { response in
-            // Parse JSON data.
-            let responseResultValue: Dictionary? = response.result.value as? Dictionary<String, AnyObject>
-            if let responseDictionary = responseResultValue?["response"] as? Dictionary<String, AnyObject> {
-                if let venues = responseDictionary["venues"] as? Array<AnyObject> {
-                    print("Venus count: \(venues.count)")
-                    
-                    // Iterate venues array of JSON data.
-                    for venue in venues {
-                        if let venue = venue as? Dictionary<String, AnyObject> {
-                            guard let name = venue["name"] as? String else { return }
-                            guard let id = venue["id"] as? String else { return }
-                            let url = venue["url"] as? String
-                            
-                            // Instantiate objects of type Venue struct.
-                            let aVenueStruct = Venue(name: name, id: id, url: url)
-                            resultsArray.append(aVenueStruct)
-                        }
-                    }
-                    // Completion handler. Pass resultsArray to the caller object.
-                    completion(results: resultsArray)
-                }
+            if let results = Venue.parse(response) {
+                completion(results: results)
             }
         }
     }
 }
 
-struct Venue: GeneratorType  {
-
-    let name: String
-    let id: String
-    let url: URLStringConvertible?
-//    let location
-//    let menu
-//    let contact
-    
-    init(name: String, id: String, url: String?) {
-        self.name = name
-        self.id = id
-        self.url = url
+extension Venue {
+    static func parse(response: (Response<AnyObject, NSError>)) -> [Venue]? {
+        
+        var resultsArray: [Venue] = [Venue]()
+        
+        // Parse JSON data.
+        let responseResultValue: Dictionary? = response.result.value as? Dictionary<String, AnyObject>
+        if let responseDictionary = responseResultValue?["response"] as? Dictionary<String, AnyObject> {
+            if let venues = responseDictionary["venues"] as? Array<AnyObject> {
+                print("Venus count: \(venues.count)")
+                
+                // Iterate venues array of JSON data.
+                for venue in venues {
+                    if let venue = venue as? Dictionary<String, AnyObject> {
+                        guard let name = venue["name"] as? String else { return nil }
+                        guard let id = venue["id"] as? String else { return nil}
+                        let url = venue["url"] as? String
+                        
+                        // Instantiate objects of type Venue struct.
+                        let aVenueStruct = Venue(name: name, id: id, url: url)
+                        resultsArray.append(aVenueStruct)
+                    }
+                }
+                return resultsArray
+            }
+        }
+        return nil
     }
 }
