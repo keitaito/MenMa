@@ -76,8 +76,10 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate {
             //handle and present the message on screen
             let value = replyMessage["value"] as? Venue
             //            self.messageLabel.setText(value)
+            print("value: \(value)")
             }, errorHandler: {error in
                 // catch any errors here
+
                 print(error)
         })
         

@@ -57,6 +57,8 @@ class MainViewController: UIViewController, WCSessionDelegate, LocationManagerDe
             var array: Array<Venue> = results 
             array = Array(array[0..<5])
             self.venues = array
+            
+//            self.venues = results
         }
         
         locationManager.startStandardUpdates()
@@ -85,7 +87,7 @@ class MainViewController: UIViewController, WCSessionDelegate, LocationManagerDe
     // MARK: - LocationManagerDelegate
     
     func locationManagerDidReceiveLocation(location: CLLocation) {
-        print("latitude: \(location.coordinate.latitude), longitude \(location.coordinate.longitude)\n")
+//        print("latitude: \(location.coordinate.latitude), longitude \(location.coordinate.longitude)\n")
         self.latitudeLabel.text = String(location.coordinate.latitude)
         self.longitudeLabel.text = String(location.coordinate.longitude)
         
