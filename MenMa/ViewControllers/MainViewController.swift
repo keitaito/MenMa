@@ -75,8 +75,24 @@ class MainViewController: UIViewController, WCSessionDelegate, LocationManagerDe
             self.venuesLabel.text = value
         }
         
-        //send a reply
-        replyHandler(["value":self.venues])
+//        //send a reply
+//        replyHandler(["value":self.venues])
+        
+        // Check if venues is empty.
+        if venues.isEmpty {
+            manager.download(url: url, parameters: parameters, completion: { (results) -> Void in
+                self.venues = results
+            })
+        }
+ 
+        
+        NSKeyedArchiver.setClassName("Venue", forClass: Venue.self)
+        let convertedVenuesData = NSKeyedArchiver.archivedDataWithRootObject(venues)
+        session.sendMessageData(convertedVenuesData, replyHandler: { (replyedData) -> Void in
+            print("ReplyHandler called")
+            }) { (error) -> Void in
+                print("Error: \(error.localizedDescription)")
+        }
         
     }
     
