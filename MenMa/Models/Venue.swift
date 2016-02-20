@@ -27,6 +27,7 @@ class Venue: NSObject, NSCoding  {
         super.init()
     }
     
+    /// Required method for NSCoding Protocol.
     required convenience init?(coder aDecoder: NSCoder) {
         // name and id should be non-nil value.
         guard let unarchivedName = aDecoder.decodeObjectForKey("name") as? String,
@@ -37,7 +38,7 @@ class Venue: NSObject, NSCoding  {
         // Calle designated initializer.
         self.init(name: unarchivedName, id: unarchivedId, url: unarchivedUrl)
     }
-    
+    /// Required method for NSCoding Protocol.
     func encodeWithCoder(aCoder: NSCoder) {
         aCoder.encodeObject(name, forKey: "name")
         aCoder.encodeObject(id, forKey: "id")

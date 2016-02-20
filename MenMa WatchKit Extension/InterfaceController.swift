@@ -13,13 +13,16 @@ import WatchConnectivity
 
 class InterfaceController: WKInterfaceController, WCSessionDelegate {
 
-    // MARK: - Properties
+    // MARK: - IBOutlets
     
     @IBOutlet var messageLabel: WKInterfaceLabel!
     @IBOutlet var ramenMap: WKInterfaceMap!
     @IBOutlet var ramenTableView: WKInterfaceTable!
-    let sharedDefaults: NSUserDefaults = NSUserDefaults(suiteName: "group.com.keitaito.MenMa")!
-    //var tempArray: NSArray = ["tonkotsu🍜","shoyu🍜","miso🍜"]
+    
+    // MARK: - Properties
+    
+//    let sharedDefaults: NSUserDefaults = NSUserDefaults(suiteName: "group.com.keitaito.MenMa")!
+//    //var tempArray: NSArray = ["tonkotsu🍜","shoyu🍜","miso🍜"]
     
     var session: WCSession!
     var cachedRamenPlaceNames: [String]? = []
@@ -98,6 +101,7 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate {
     }
     
     func session(session: WCSession, didReceiveMessageData messageData: NSData, replyHandler: (NSData) -> Void) {
+        // Convert venues from NSData type to Venue type.
         NSKeyedUnarchiver.setClass(Venue.self, forClassName: "Venue")
         let unarchivedVenues = NSKeyedUnarchiver.unarchiveObjectWithData(messageData) as? [Venue]
         guard let venues = unarchivedVenues else { return }
