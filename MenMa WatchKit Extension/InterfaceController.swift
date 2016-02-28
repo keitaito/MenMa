@@ -13,14 +13,21 @@ import WatchConnectivity
 
 class InterfaceController: WKInterfaceController, WCSessionDelegate {
 
+    // MARK: - IBOutlets
+    
     @IBOutlet var messageLabel: WKInterfaceLabel!
     @IBOutlet var ramenMap: WKInterfaceMap!
     @IBOutlet var ramenTableView: WKInterfaceTable!
-    let sharedDefaults: NSUserDefaults = NSUserDefaults(suiteName: "group.com.keitaito.MenMa")!
-    //var tempArray: NSArray = ["tonkotsu🍜","shoyu🍜","miso🍜"]
+    
+    // MARK: - Properties
+    
+//    let sharedDefaults: NSUserDefaults = NSUserDefaults(suiteName: "group.com.keitaito.MenMa")!
+//    //var tempArray: NSArray = ["tonkotsu🍜","shoyu🍜","miso🍜"]
     
     var session: WCSession!
     var cachedRamenPlaceNames: [String]? = []
+    
+    // MARK: - Life cycle
     
     override func awakeWithContext(context: AnyObject?) {
         super.awakeWithContext(context)
@@ -37,34 +44,12 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate {
         
         ramenMap.setRegion(MKCoordinateRegionMake(mapLocation, regionSpan))
         
-        cachedRamenPlaceNames = sharedDefaults.objectForKey("ramenPlaceNames") as? [String]
-        if let cachedRamenPlaceNames = cachedRamenPlaceNames {
-            self.configureRamenTableView(cachedRamenPlaceNames)
-        } else {
-            self.configureRamenTableView(NSArray())
-        }
-    }
-
-    func configureRamenTableView (dataObjects: NSArray) {
-        guard let cachedRamenPlaceNames = cachedRamenPlaceNames else {return}
-        ramenTableView.setNumberOfRows(dataObjects.count, withRowType: "ramenRowController")
-        for var i = 0; i < cachedRamenPlaceNames.count; ++i {
-            let ramenRow: RamenRowController = self.ramenTableView.rowControllerAtIndex(i) as! RamenRowController
-            let dataObject: NSString = dataObjects.objectAtIndex(i) as! NSString
-            
-            ramenRow.ramenLabel.setText(dataObject as String)
-        }
-    }
-    
-    func session(session: WCSession, didReceiveMessage message: [String : AnyObject], replyHandler: ([String : AnyObject]) -> Void) {
-        //handle received message
-        let value = message["value"] as? String
-        //use this to present immediately on the screen
-        dispatch_async(dispatch_get_main_queue()) {
-            self.messageLabel.setText(value)
-        }
-        //send a reply
-        replyHandler(["value":"RAMEN YEAH"])
+//        cachedRamenPlaceNames = sharedDefaults.objectForKey("ramenPlaceNames") as? [String]
+//        if let cachedRamenPlaceNames = cachedRamenPlaceNames {
+//            self.configureRamenTableView(cachedRamenPlaceNames)
+//        } else {
+//            self.configureRamenTableView(NSArray())
+//        }
     }
     
     override func willActivate() {
@@ -84,10 +69,47 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate {
         })
         
     }
-
+    
     override func didDeactivate() {
         // This method is called when watch view controller is no longer visible
         super.didDeactivate()
     }
 
+    // MARK: - Private methods
+    
+    private func configureRamenTableView<T> (dataObjects: Array<T>) {
+//        guard let cachedRamenPlaceNames = cachedRamenPlaceNames else {return}
+        ramenTableView.setNumberOfRows(dataObjects.count, withRowType: "ramenRowController")
+        for i in dataObjects.indices {
+            let ramenRow: RamenRowController = self.ramenTableView.rowControllerAtIndex(i) as! RamenRowController
+            let venue = dataObjects[i] as? Venue
+            if let venue = venue {
+                ramenRow.ramenLabel.setText(venue.name)
+            }
+        }
+    }
+    
+    // MARK: - WCSessionDelegate
+    
+    func session(session: WCSession, didReceiveMessage message: [String : AnyObject], replyHandler: ([String : AnyObject]) -> Void) {
+        //handle received message
+        let value = message["value"] as? String
+        //use this to present immediately on the screen
+        dispatch_async(dispatch_get_main_queue()) {
+            self.messageLabel.setText(value)
+        }
+        //send a reply
+        replyHandler(["value":"RAMEN YEAH"])
+    }
+    
+    func session(session: WCSession, didReceiveMessageData messageData: NSData, replyHandler: (NSData) -> Void) {
+        // Convert venues from NSData type to Venue type.
+        NSKeyedUnarchiver.setClass(Venue.self, forClassName: "Venue")
+        let unarchivedVenues = NSKeyedUnarchiver.unarchiveObjectWithData(messageData) as? [Venue]
+        guard let venues = unarchivedVenues else { return }
+        venues.forEach {
+            print($0.name)
+        }
+        configureRamenTableView(venues)
+    }
 }

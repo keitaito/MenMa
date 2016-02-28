@@ -9,17 +9,39 @@
 import UIKit
 import Alamofire
 
-class Venue  {
+class Venue: NSObject, NSCoding  {
     let name: String
     let id: String
-    let url: URLStringConvertible?
+    let url: String?
+    
     //    let location
     //    let menu
     //    let contact
     
+    /// Designated Initializer.
     init(name: String, id: String, url: String?) {
         self.name = name
         self.id = id
         self.url = url
+        
+        super.init()
+    }
+    
+    /// Required method for NSCoding Protocol.
+    required convenience init?(coder aDecoder: NSCoder) {
+        // name and id should be non-nil value.
+        guard let unarchivedName = aDecoder.decodeObjectForKey("name") as? String,
+              let unarchivedId = aDecoder.decodeObjectForKey("id") as? String
+            else { return nil }
+        // url could be nil.
+        let unarchivedUrl = aDecoder.decodeObjectForKey("url") as? String
+        // Calle designated initializer.
+        self.init(name: unarchivedName, id: unarchivedId, url: unarchivedUrl)
+    }
+    /// Required method for NSCoding Protocol.
+    func encodeWithCoder(aCoder: NSCoder) {
+        aCoder.encodeObject(name, forKey: "name")
+        aCoder.encodeObject(id, forKey: "id")
+        aCoder.encodeObject(url, forKey: "url")
     }
 }
