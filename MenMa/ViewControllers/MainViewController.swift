@@ -18,6 +18,7 @@ class MainViewController: UIViewController, WCSessionDelegate, LocationManagerDe
     @IBOutlet weak var venuesLabel: UILabel!
     @IBOutlet weak var latitudeLabel: UILabel!
     @IBOutlet weak var longitudeLabel: UILabel!
+    @IBOutlet weak var redownloadButton: UIButton!
     
     // MARK: - Properties
     
@@ -58,6 +59,11 @@ class MainViewController: UIViewController, WCSessionDelegate, LocationManagerDe
         }
         
         locationManager.startStandardUpdates()
+        
+        // Test code for unit test.
+        let aSubView = UIView(frame: CGRectMake(self.view.center.x, self.view.center.y, 20, 20))
+        aSubView.backgroundColor = UIColor.redColor()
+        self.view.addSubview(aSubView)
     }
     
     @IBAction func didTapDownloadButton(sender: UIButton) {
