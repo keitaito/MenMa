@@ -55,11 +55,11 @@ class MainViewController: UIViewController, WCSessionDelegate, LocationManagerDe
         
         // Do any additional setup after loading the view.
         manager.download(url: self.url) { (results) -> Void in
-            var array: Array<Venue> = results 
-            array = Array(array[0..<5])
-            self.venues = array
+//            var array: Array<Venue> = results 
+//            array = Array(array[0..<5])
+//            self.venues = array
             
-//            self.venues = results
+            self.venues = results
         }
         
         locationManager.startStandardUpdates()
