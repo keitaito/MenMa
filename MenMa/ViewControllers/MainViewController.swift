@@ -34,6 +34,7 @@ class MainViewController: UIViewController, WCSessionDelegate, LocationManagerDe
         didSet {
             venues.forEach {
                 print("name: \($0.name)")
+                print("distance: \($0.distance)")
             }
         }
     }
