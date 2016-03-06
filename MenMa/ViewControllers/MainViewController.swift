@@ -92,8 +92,7 @@ class MainViewController: UIViewController, WCSessionDelegate, LocationManagerDe
         }
  
         // Convert venues to NSData, so that venues is able to be sent by sendMessageData.
-        NSKeyedArchiver.setClassName("Venue", forClass: Venue.self)
-        let convertedVenuesData = NSKeyedArchiver.archivedDataWithRootObject(venues)
+        let convertedVenuesData = Archvier<Venue>.archive(venues)
         session.sendMessageData(convertedVenuesData, replyHandler: { (repliedData) -> Void in
             print("ReplyHandler called") 
             }) { (error) -> Void in

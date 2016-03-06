@@ -102,8 +102,7 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate {
     
     func session(session: WCSession, didReceiveMessageData messageData: NSData, replyHandler: (NSData) -> Void) {
         // Convert venues from NSData type to Venue type.
-        NSKeyedUnarchiver.setClass(Venue.self, forClassName: "Venue")
-        let unarchivedVenues = NSKeyedUnarchiver.unarchiveObjectWithData(messageData) as? [Venue]
+        let unarchivedVenues = Archvier<Venue>.unarchive(messageData)
         guard let venues = unarchivedVenues else { return }
         venues.forEach {
             print($0.name)
