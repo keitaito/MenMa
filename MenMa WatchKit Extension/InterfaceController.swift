@@ -32,17 +32,42 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate {
     override func awakeWithContext(context: AnyObject?) {
         super.awakeWithContext(context)
         
+        // Set up WCSession.
         if (WCSession.isSupported()) {
             session = WCSession.defaultSession()
             session.delegate = self
             session.activateSession()
         }
         
+        // Set up the current location.
         let mapLocation: CLLocationCoordinate2D = CLLocationCoordinate2DMake(37, -122)
         let regionSpan: MKCoordinateSpan = MKCoordinateSpanMake(1, 1)
         ramenMap.addAnnotation(mapLocation, withPinColor: WKInterfaceMapPinColor.Purple)
-        
         ramenMap.setRegion(MKCoordinateRegionMake(mapLocation, regionSpan))
+        
+        // Send a message to wake up iOS.
+        let message = ["message" : "watch wants iOS to wake up."]
+        session.sendMessage(message, replyHandler: { replyMessage -> Void in
+            // When iOS receives a message, send back a reply to watch.
+            if let reply = replyMessage["reply"] as? String {
+                print(reply)
+            }
+            
+            // After waking iOS up, send a message to ask iOS to download venues data.
+            let messageForDownloading = ["message": "download"]
+            self.session.sendMessage(messageForDownloading, replyHandler: { (replyMessage) -> Void in
+                // when iOS receives a message, send back a reply to watch.
+                print(replyMessage)
+                
+                // download message's error.
+                }, errorHandler: { (error) -> Void in
+                    print(error.localizedDescription)
+            })
+            
+            // wake up message's error.
+            }, errorHandler: { (error) -> Void in
+                print(error.localizedDescription)
+        })
         
 //        cachedRamenPlaceNames = sharedDefaults.objectForKey("ramenPlaceNames") as? [String]
 //        if let cachedRamenPlaceNames = cachedRamenPlaceNames {
@@ -55,17 +80,6 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate {
     override func willActivate() {
         // This method is called when watch view controller is about to be visible to user
         super.willActivate()
-        
-        let messageToSend = ["value": "message sent successfully"]
-        session.sendMessage(messageToSend, replyHandler: { replyMessage in
-            //            //handle and present the message on screen
-            //            let value = replyMessage["value"] as? Venue
-            //            //            self.messageLabel.setText(value)
-            }, errorHandler: {error in
-                // catch any errors here
-                print(error)
-        })
-        
     }
     
     override func didDeactivate() {

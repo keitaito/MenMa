@@ -66,6 +66,8 @@ class MainViewController: UIViewController, WCSessionDelegate, LocationManagerDe
         self.view.addSubview(aSubView)
     }
     
+    // MARK: - IBActions
+    
     @IBAction func didTapDownloadButton(sender: UIButton) {
         manager.download(url: url, parameters: parameters) { (results) -> Void in
             self.venues = results
@@ -76,27 +78,42 @@ class MainViewController: UIViewController, WCSessionDelegate, LocationManagerDe
     
     func session(session: WCSession, didReceiveMessage message: [String : AnyObject], replyHandler: ([String : AnyObject]) -> Void) {
         //handle received message
-        let value = message["value"] as? String
+        let value = message["message"] as? String
         dispatch_async(dispatch_get_main_queue()) {
             self.venuesLabel.text = value
         }
         
-//        //send a reply
-//        replyHandler(["value":self.venues])
-        
-        // Check if venues is empty.
-        if venues.isEmpty {
-            manager.download(url: url, parameters: parameters, completion: { (results) -> Void in
-                self.venues = results
-            })
-        }
- 
-        // Convert venues to NSData, so that venues is able to be sent by sendMessageData.
-        let convertedVenuesData = Archvier<Venue>.archive(venues)
-        session.sendMessageData(convertedVenuesData, replyHandler: { (repliedData) -> Void in
-            print("ReplyHandler called") 
-            }) { (error) -> Void in
-                print("Error: \(error.localizedDescription)")
+        if let value = value {
+            if value != "download" {
+                // wake up.
+                replyHandler(["reply" : "iOS recieved message from watch"])
+            } else {
+                replyHandler(["reply" : "Start to download venues, and send it to watch"])
+                // download.
+                // Check if venues is empty.
+                if venues.isEmpty {
+                    manager.download(url: url, parameters: parameters, completion: { (results) -> Void in
+                        self.venues = results
+                        
+                        // Convert venues to NSData, so that venues is able to be sent by sendMessageData.
+                        let convertedVenuesData = Archvier<Venue>.archive(self.venues)
+                        session.sendMessageData(convertedVenuesData, replyHandler: { (repliedData) -> Void in
+                            print("ReplyHandler called")
+                            }) { (error) -> Void in
+                                print("Error: \(error.localizedDescription)")
+                        }
+                    })
+                } else {
+                    
+                    // Convert venues to NSData, so that venues is able to be sent by sendMessageData.
+                    let convertedVenuesData = Archvier<Venue>.archive(venues)
+                    session.sendMessageData(convertedVenuesData, replyHandler: { (repliedData) -> Void in
+                        print("ReplyHandler called")
+                        }) { (error) -> Void in
+                            print("Error: \(error.localizedDescription)")
+                    }
+                }
+            }
         }
     }
     

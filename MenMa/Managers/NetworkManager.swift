@@ -15,16 +15,32 @@ struct NetworkManager {
     
     func download(url url: URLStringConvertible, parameters: [String : AnyObject]?, completion: (results: Array<Venue>) -> Void) -> Void {
         manager.request(.GET, url, parameters: parameters).responseJSON { (response: (Response<AnyObject, NSError>)) -> Void in
+            // If error is in reponse, print it out.
+            if let error = response.result.error {
+                print("Error: \(error.localizedDescription)")
+            }
+            
             if let results = Venue.parse(response) {
                 completion(results: results)
+            } else {
+                // If nil is returned, from parsing. print out.
+                print("Parsing error: no results. network issue, or parsing issue.")
             }
         }
     }
     
     func download(url url: URLStringConvertible, completion: (results: Array<Venue>) -> Void) -> Void {
         manager.request(.GET, url).responseJSON { response in
+            // If error is in reponse, print it out.
+            if let error = response.result.error {
+                print("Error: \(error.localizedDescription)")
+            }
+            
             if let results = Venue.parse(response) {
                 completion(results: results)
+            } else {
+                // If nil is returned, from parsing. print out.
+                print("Parsing error: no results. network issue, or parsing issue.")
             }
         }
     }
@@ -39,7 +55,7 @@ extension Venue {
         let responseResultValue: Dictionary? = response.result.value as? Dictionary<String, AnyObject>
         if let responseDictionary = responseResultValue?["response"] as? Dictionary<String, AnyObject> {
             if let venues = responseDictionary["venues"] as? Array<AnyObject> {
-                print("Venus count: \(venues.count)")
+                print("Venues count: \(venues.count)")
                 
                 // Iterate venues array of JSON data.
                 for venue in venues {
