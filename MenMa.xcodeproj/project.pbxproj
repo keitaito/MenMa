@@ -19,10 +19,13 @@
 		230AD05E1B2CCA4E003254E7 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 230AD05C1B2CCA4E003254E7 /* Interface.storyboard */; };
 		230AD0601B2CCA4E003254E7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 230AD05F1B2CCA4E003254E7 /* Images.xcassets */; };
 		874C808B1C65E3D30030CDFC /* VenueTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 874C808A1C65E3D30030CDFC /* VenueTests.swift */; };
+		876C8CB21C8C134000871588 /* Archiver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87C4FCA41C8BCC86004CD087 /* Archiver.swift */; };
 		877BC9F31C54539B0076939B /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 877BC9F21C54539B0076939B /* CoreLocation.framework */; };
 		877BC9F51C5455510076939B /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 877BC9F41C5455510076939B /* LocationManager.swift */; };
 		87A83E221C4B3EF800BC37F8 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A83E211C4B3EF800BC37F8 /* MainViewController.swift */; };
 		87A8DDAE1C4B263000333374 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A8DDAD1C4B263000333374 /* NetworkManager.swift */; };
+		87C4FCA51C8BCC86004CD087 /* Archiver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87C4FCA41C8BCC86004CD087 /* Archiver.swift */; };
+		87C4FCA91C8BFB2B004CD087 /* ArchiverTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87C4FCA81C8BFB2B004CD087 /* ArchiverTests.swift */; };
 		87D725A01C5DBB8F00EF0D4F /* Venue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87E40F671C5D8C7200CBE1BB /* Venue.swift */; };
 		87E40F681C5D8C7200CBE1BB /* Venue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87E40F671C5D8C7200CBE1BB /* Venue.swift */; };
 		87FA06551C6592F000C46D81 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 87FA06541C6592F000C46D81 /* MapKit.framework */; };
@@ -117,6 +120,8 @@
 		877BC9F41C5455510076939B /* LocationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		87A83E211C4B3EF800BC37F8 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MainViewController.swift; path = ViewControllers/MainViewController.swift; sourceTree = "<group>"; };
 		87A8DDAD1C4B263000333374 /* NetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NetworkManager.swift; path = Managers/NetworkManager.swift; sourceTree = "<group>"; };
+		87C4FCA41C8BCC86004CD087 /* Archiver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Archiver.swift; path = Utilities/Archiver.swift; sourceTree = "<group>"; };
+		87C4FCA81C8BFB2B004CD087 /* ArchiverTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ArchiverTests.swift; path = Utilities/ArchiverTests.swift; sourceTree = "<group>"; };
 		87E40F671C5D8C7200CBE1BB /* Venue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Venue.swift; path = Models/Venue.swift; sourceTree = "<group>"; };
 		87FA06541C6592F000C46D81 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS2.1.sdk/System/Library/Frameworks/MapKit.framework; sourceTree = DEVELOPER_DIR; };
 		87FA06581C65AA5A00C46D81 /* MainViewControllerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewControllerTests.swift; sourceTree = "<group>"; };
@@ -200,6 +205,7 @@
 				87E40F691C5D8C7600CBE1BB /* Models */,
 				87A8DDB21C4B355400333374 /* ViewControllers */,
 				875D77961C424CE500BCDFF5 /* Managers */,
+				87C4FCA31C8BCC2D004CD087 /* Utilities */,
 				D29463711B2CDE4D004B5FBA /* Menma-Bridging-Header.h */,
 				230AD0261B2CC993003254E7 /* Main.storyboard */,
 				230AD0291B2CC993003254E7 /* Images.xcassets */,
@@ -220,6 +226,7 @@
 		230AD0351B2CC993003254E7 /* MenMaTests */ = {
 			isa = PBXGroup;
 			children = (
+				87C4FCAA1C8BFB31004CD087 /* Utilities */,
 				230AD0381B2CC993003254E7 /* MenMaTests.swift */,
 				87FA06581C65AA5A00C46D81 /* MainViewControllerTests.swift */,
 				874C808A1C65E3D30030CDFC /* VenueTests.swift */,
@@ -306,6 +313,22 @@
 				87A83E211C4B3EF800BC37F8 /* MainViewController.swift */,
 			);
 			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		87C4FCA31C8BCC2D004CD087 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				87C4FCA41C8BCC86004CD087 /* Archiver.swift */,
+			);
+			name = Utilities;
+			sourceTree = "<group>";
+		};
+		87C4FCAA1C8BFB31004CD087 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				87C4FCA81C8BFB2B004CD087 /* ArchiverTests.swift */,
+			);
+			name = Utilities;
 			sourceTree = "<group>";
 		};
 		87E40F691C5D8C7600CBE1BB /* Models */ = {
@@ -679,6 +702,7 @@
 				87A8DDAE1C4B263000333374 /* NetworkManager.swift in Sources */,
 				230AD0231B2CC993003254E7 /* AppDelegate.swift in Sources */,
 				87A83E221C4B3EF800BC37F8 /* MainViewController.swift in Sources */,
+				87C4FCA51C8BCC86004CD087 /* Archiver.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -687,6 +711,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				874C808B1C65E3D30030CDFC /* VenueTests.swift in Sources */,
+				87C4FCA91C8BFB2B004CD087 /* ArchiverTests.swift in Sources */,
 				230AD0391B2CC993003254E7 /* MenMaTests.swift in Sources */,
 				87FA06591C65AA5A00C46D81 /* MainViewControllerTests.swift in Sources */,
 			);
@@ -702,6 +727,7 @@
 				D245C8441C5074F700059D66 /* StartInterfaceController.swift in Sources */,
 				D2DF268D1B2CFD6C001757E3 /* RamenRowController.swift in Sources */,
 				230AD0501B2CCA4E003254E7 /* GlanceController.swift in Sources */,
+				876C8CB21C8C134000871588 /* Archiver.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -885,10 +911,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/build/Debug-iphoneos",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -909,10 +932,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/build/Debug-iphoneos",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = MenMaTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.keitaito.$(PRODUCT_NAME:rfc1034identifier)";
