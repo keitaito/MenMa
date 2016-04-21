@@ -13,7 +13,8 @@ class Venue: NSObject, NSCoding  {
     let name: String
     let id: String
     let url: String?
-    let location: Dictionary<String, AnyObject>
+    let latitude: Double
+    let longitude: Double
     let distance: Int
     
     //    let location
@@ -21,11 +22,12 @@ class Venue: NSObject, NSCoding  {
     //    let contact
     
     /// Designated Initializer.
-    init(name: String, id: String, url: String?, location: Dictionary<String, AnyObject>, distance: Int) {
+    init(name: String, id: String, url: String?, latitude: Double, longitude: Double, distance: Int) {
         self.name = name
         self.id = id
         self.url = url
-        self.location = location
+        self.latitude = latitude
+        self.longitude = longitude
         self.distance = distance
         
         super.init()
@@ -39,17 +41,19 @@ class Venue: NSObject, NSCoding  {
             else { return nil }
         // url could be nil.
         let unarchivedUrl = aDecoder.decodeObjectForKey("url") as? String
-        let unarchivedLocation = aDecoder.decodeObjectForKey("location") as! Dictionary<String, AnyObject>
-        let unarchivedDistance = aDecoder.decodeObjectForKey("distance") as! Int
+        guard let unarchivedLatitude = aDecoder.decodeObjectForKey("latitude") as? Double else { return nil }
+        guard let unarchivedLongitude = aDecoder.decodeObjectForKey("longitude") as? Double else { return nil }
+        guard let unarchivedDistance = aDecoder.decodeObjectForKey("distance") as? Int else { return nil }
         // Calle designated initializer.
-        self.init(name: unarchivedName, id: unarchivedId, url: unarchivedUrl, location: unarchivedLocation, distance: unarchivedDistance)
+        self.init(name: unarchivedName, id: unarchivedId, url: unarchivedUrl, latitude: unarchivedLatitude, longitude: unarchivedLongitude, distance: unarchivedDistance)
     }
     /// Required method for NSCoding Protocol.
     func encodeWithCoder(aCoder: NSCoder) {
         aCoder.encodeObject(name, forKey: "name")
         aCoder.encodeObject(id, forKey: "id")
         aCoder.encodeObject(url, forKey: "url")
-        aCoder.encodeObject(location, forKey: "location")
+        aCoder.encodeObject(latitude, forKey: "latitude")
+        aCoder.encodeObject(longitude, forKey: "longitude")
         aCoder.encodeObject(distance, forKey: "distance")
     }
 }

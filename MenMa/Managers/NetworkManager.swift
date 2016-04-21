@@ -31,6 +31,7 @@ struct NetworkManager {
     
     func download(url url: URLStringConvertible, completion: (results: Array<Venue>) -> Void) -> Void {
         manager.request(.GET, url).responseJSON { response in
+            print(response)
             // If error is in reponse, print it out.
             if let error = response.result.error {
                 print("Error: \(error.localizedDescription)")
@@ -61,13 +62,16 @@ extension Venue {
                 for venue in venues {
                     if let venue = venue as? Dictionary<String, AnyObject> {
                         guard let name = venue["name"] as? String else { return nil }
-                        guard let id = venue["id"] as? String else { return nil}
+                        guard let id = venue["id"] as? String else { return nil }
                         let url = venue["url"] as? String
-                        let location = venue["location"] as? Dictionary<String, AnyObject>
-                        let distance = location!["distance"] as? Int
+                        guard let location = venue["location"] as? Dictionary<String, AnyObject>,
+                            let latitude = location["lat"] as? Double,
+                            let longitude = location["lng"] as? Double,
+                            let distance = location["distance"] as? Int
+                            else { return nil }
                         
                         // Instantiate objects of type Venue struct.
-                        let aVenueStruct = Venue(name: name, id: id, url: url, location: location!, distance: distance!)
+                        let aVenueStruct = Venue(name: name, id: id, url: url, latitude: latitude, longitude: longitude, distance: distance)
                         resultsArray.append(aVenueStruct)
                     }
                 }
