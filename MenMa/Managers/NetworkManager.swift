@@ -63,9 +63,11 @@ extension Venue {
                         guard let name = venue["name"] as? String else { return nil }
                         guard let id = venue["id"] as? String else { return nil}
                         let url = venue["url"] as? String
+                        let location = venue["location"] as? Dictionary<String, AnyObject>
+                        let distance = location!["distance"] as? Int
                         
                         // Instantiate objects of type Venue struct.
-                        let aVenueStruct = Venue(name: name, id: id, url: url)
+                        let aVenueStruct = Venue(name: name, id: id, url: url, location: location!, distance: distance!)
                         resultsArray.append(aVenueStruct)
                     }
                 }
