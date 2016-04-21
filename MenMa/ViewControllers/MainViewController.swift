@@ -35,6 +35,7 @@ class MainViewController: UIViewController, WCSessionDelegate, LocationManagerDe
         didSet {
             venues.forEach {
                 print("name: \($0.name)")
+                print("distance: \($0.distance)")
             }
         }
     }
@@ -55,6 +56,10 @@ class MainViewController: UIViewController, WCSessionDelegate, LocationManagerDe
         
         // Do any additional setup after loading the view.
         manager.download(url: self.url) { (results) -> Void in
+//            var array: Array<Venue> = results 
+//            array = Array(array[0..<5])
+//            self.venues = array
+            
             self.venues = results
         }
         
@@ -104,7 +109,7 @@ class MainViewController: UIViewController, WCSessionDelegate, LocationManagerDe
     // MARK: - LocationManagerDelegate
     
     func locationManagerDidReceiveLocation(location: CLLocation) {
-        print("latitude: \(location.coordinate.latitude), longitude \(location.coordinate.longitude)\n")
+//        print("latitude: \(location.coordinate.latitude), longitude \(location.coordinate.longitude)\n")
         self.latitudeLabel.text = String(location.coordinate.latitude)
         self.longitudeLabel.text = String(location.coordinate.longitude)
         
