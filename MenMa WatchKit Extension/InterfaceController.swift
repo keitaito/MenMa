@@ -80,6 +80,17 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate {
     override func willActivate() {
         // This method is called when watch view controller is about to be visible to user
         super.willActivate()
+        
+        let messageToSend = ["value": "message sent successfully"]
+        session.sendMessage(messageToSend, replyHandler: { replyMessage in
+            //            //handle and present the message on screen
+            //            let value = replyMessage["value"] as? Venue
+            //            //            self.messageLabel.setText(value)
+            }, errorHandler: {error in
+                // catch any errors here
+                print(error)
+        })
+        
     }
     
     override func didDeactivate() {
