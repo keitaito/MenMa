@@ -10,6 +10,7 @@ import UIKit
 import Alamofire
 import WatchConnectivity
 import CoreLocation
+import MapKit
 
 @available(iOS 9.0, *) //only available for <iOS 9.0
 class MainViewController: UIViewController, WCSessionDelegate, LocationManagerDelegate {
@@ -18,7 +19,7 @@ class MainViewController: UIViewController, WCSessionDelegate, LocationManagerDe
     @IBOutlet weak var venuesLabel: UILabel!
     @IBOutlet weak var latitudeLabel: UILabel!
     @IBOutlet weak var longitudeLabel: UILabel!
-    @IBOutlet weak var redownloadButton: UIButton!
+    @IBOutlet weak var mapView: MKMapView!
     
     // MARK: - Properties
     
