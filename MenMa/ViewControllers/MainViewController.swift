@@ -33,9 +33,9 @@ class MainViewController: UIViewController, WCSessionDelegate, LocationManagerDe
     
     var venues: Array<Venue> = Array<Venue>() {
         didSet {
-            venues.forEach { venue in
-                print("name: \(venue.name)")
-                print("distance: \(venue.distance)")
+            venues.forEach {
+                print("name: \($0.name)")
+                print("distance: \($0.distance)")
             }
         }
     }
