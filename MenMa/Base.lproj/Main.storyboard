@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="ZDD-d3-ptv">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <scenes>
-        <!--Main View Controller-->
+        <!--🍜 menma 🍜-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController storyboardIdentifier="MainViewController" id="BYZ-38-t0r" customClass="MainViewController" customModule="MenMa" customModuleProvider="target" sceneMemberID="viewController">
@@ -17,53 +17,76 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="venueLabel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zef-Hr-hra" userLabel="venuesLabel">
-                                <rect key="frame" x="256" y="151" width="88" height="20.5"/>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="DCp-kO-K6N">
+                                <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                            </mapView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="latitudeLabel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rWU-k7-5DZ" userLabel="latitudeLabel">
+                                <rect key="frame" x="250" y="84" width="99" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="longitudeLabel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Le-0R-29b" userLabel="longitudeLabel">
-                                <rect key="frame" x="243" y="110" width="113.5" height="20.5"/>
+                                <rect key="frame" x="243" y="105" width="114" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="latitudeLabel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rWU-k7-5DZ" userLabel="latitudeLabel">
-                                <rect key="frame" x="250" y="70" width="99" height="20.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="venueLabel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zef-Hr-hra" userLabel="venuesLabel">
+                                <rect key="frame" x="256" y="126" width="88" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JlO-ij-4FP">
-                                <rect key="frame" x="242" y="285" width="115" height="30"/>
-                                <state key="normal" title="Re-download 🍜"/>
-                                <connections>
-                                    <action selector="didTapDownloadButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="iu9-u2-SZf"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="rWU-k7-5DZ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="1ea-MI-atI"/>
-                            <constraint firstItem="6Le-0R-29b" firstAttribute="top" secondItem="rWU-k7-5DZ" secondAttribute="bottom" constant="20" id="BSj-x3-dWK"/>
-                            <constraint firstItem="JlO-ij-4FP" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="H5R-wi-42f"/>
-                            <constraint firstItem="zef-Hr-hra" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="O4O-Ap-9oS"/>
-                            <constraint firstItem="JlO-ij-4FP" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="STT-cI-ZIg"/>
-                            <constraint firstItem="zef-Hr-hra" firstAttribute="top" secondItem="6Le-0R-29b" secondAttribute="bottom" constant="20" id="XY4-da-pt4"/>
-                            <constraint firstItem="6Le-0R-29b" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="qgg-MU-iRT"/>
-                            <constraint firstItem="rWU-k7-5DZ" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="50" id="tLi-3t-6V3"/>
+                            <constraint firstItem="DCp-kO-K6N" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="5Lu-d3-En7"/>
+                            <constraint firstItem="6Le-0R-29b" firstAttribute="top" secondItem="rWU-k7-5DZ" secondAttribute="bottom" id="6sZ-Xg-3Ju"/>
+                            <constraint firstItem="rWU-k7-5DZ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="FdI-Jv-sVG"/>
+                            <constraint firstItem="rWU-k7-5DZ" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="20" id="RMa-Fp-lap"/>
+                            <constraint firstItem="DCp-kO-K6N" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="SFv-It-YiC"/>
+                            <constraint firstItem="zef-Hr-hra" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Vd2-iy-aPk"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="DCp-kO-K6N" secondAttribute="bottom" id="bwF-A9-Coo"/>
+                            <constraint firstAttribute="trailing" secondItem="DCp-kO-K6N" secondAttribute="trailing" id="dWI-bc-KWm"/>
+                            <constraint firstItem="zef-Hr-hra" firstAttribute="top" secondItem="6Le-0R-29b" secondAttribute="bottom" id="f1E-I2-gSS"/>
+                            <constraint firstItem="6Le-0R-29b" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="zfz-cy-8cS"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="🍜 menma 🍜" id="uGC-eB-SOP">
+                        <barButtonItem key="rightBarButtonItem" systemItem="refresh" id="mVP-0O-hOt">
+                            <connections>
+                                <action selector="didTapDownloadButton:" destination="BYZ-38-t0r" id="OhX-fh-dc7"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="latitudeLabel" destination="rWU-k7-5DZ" id="fPX-GL-2ja"/>
                         <outlet property="longitudeLabel" destination="6Le-0R-29b" id="YPv-1O-d5i"/>
-                        <outlet property="redownloadButton" destination="JlO-ij-4FP" id="El5-g4-cgB"/>
                         <outlet property="venuesLabel" destination="zef-Hr-hra" id="8Ju-KH-63t"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="1052" y="-378"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="jb2-if-aPm">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ZDD-d3-ptv" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="OzL-wy-04Z">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="U0d-a3-niu"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sWf-N4-PSe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="374" y="-378"/>
         </scene>
     </scenes>
 </document>
