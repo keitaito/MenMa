@@ -18,6 +18,11 @@ struct NetworkManager {
             // If error is in reponse, print it out.
             if let error = response.result.error {
                 print("Error: \(error.localizedDescription)")
+                
+                // warning dev code
+                let sampleData = Venue(name: "keita", id: "1111", url: "something", latitude: 10.0, longitude: 10.0, distance: 10)
+                let results = [sampleData]
+                completion(results: results)
             }
             
             if let results = Venue.parse(response) {
